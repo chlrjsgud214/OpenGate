@@ -55,7 +55,7 @@
 						<span class="glyphicon glyphicon-backward"></span></a>
 					</li>
 					<li><a href="noticeList.do?pageNum=${pb.startPage-1 }&search=${notice.search }&keyword=${notice.keyword}">
-						<span class="glyphicon glyphicon-triangle-left"></span></a>
+						<span class="glyphicon glyphicon-triangle-left"></span></a> 
 					</li>
 				</c:if>
 				<c:forEach var="i" begin="${pb.startPage }" end="${pb.endPage }">
