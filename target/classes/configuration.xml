@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="notice" type="com.og.model.notice" />
+		<typeAlias alias="notice" type="com.og.opengate.model.Notice" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="notice.xml" />

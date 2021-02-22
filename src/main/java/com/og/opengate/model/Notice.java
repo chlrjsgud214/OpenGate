@@ -1,4 +1,4 @@
-package com.og.model;
+package com.og.opengate.model;
 
 import java.sql.Date;
 

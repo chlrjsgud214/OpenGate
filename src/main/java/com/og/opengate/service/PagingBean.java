@@ -1,4 +1,4 @@
-package com.og.service;
+package com.og.opengate.service;
 
 import lombok.Data;
 
