@@ -4,8 +4,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="notice" type="com.og.opengate.model.Notice" />
+		<typeAlias alias="member" type="com.og.opengate.model.Member"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="notice.xml" />
+		<mapper resource="member.xml" />
 	</mappers>
 </configuration>
