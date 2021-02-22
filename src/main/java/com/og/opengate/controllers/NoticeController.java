@@ -38,6 +38,12 @@ public class NoticeController {
 		model.addAttribute("noticeList", noticeList);
 		model.addAttribute("total", total);
 		
-		return "noticeList";
+		return "/notice/noticeList";
+	}
+	@RequestMapping("noticeInsertForm")
+	public String noticeInsertForm(int num, String pageNum, Model model) {
+		model.addAttribute("num",num);
+		model.addAttribute("pageNum",pageNum);
+		return "/notice/noticeInsertForm";
 	}
 }

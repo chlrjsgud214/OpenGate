@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="header.jsp"%>
+<%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +74,7 @@
 					<li><a href="noticeList.do?pageNum=${pb.endPage + 1 }&search=${notice.search }&keyword=${notice.keyword}">
 						<span class="glyphicon glyphicon-triangle-right"></span></a>
 					</li>
-					<li><a href="noticeList.do?pageNum=${pb.totalPage }&search=${notice.search }&keyword=${notice.keyword">
+					<li><a href="noticeList.do?pageNum=${pb.totalPage }&search=${notice.search }&keyword=${notice.keyword}">
 						<span class="glyphicon glyphicon-forward"></span></a>
 					</li>
 				</c:if>
