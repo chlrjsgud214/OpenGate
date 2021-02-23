@@ -31,7 +31,7 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">회원 가입</h2>
-<form action="join.do" method="post" name="frm" enctype="multipart/form-data"
+<form action="join.do" method="post" name="frm"
 	onsubmit="return chk()">
 	<table class="table table-bordered">
 		<tr>
@@ -61,7 +61,7 @@
 		</tr>
 		<tr>
 			<th>휴대전화</th>
-			<td><input type="tel" name="tel" required="required"
+			<td><input type="tel" name="phone" required="required"
 			pattern="\d{3}-\d{3,4}-\d{4}" 
 			placeholder="010-xxxx-xxxx"></td>
 		</tr>
@@ -72,8 +72,8 @@
 		</tr>
 		<tr>
 			<th>주소</th>
-			<td><input type="text" name="addr" 
-			required="required"></td>
+			<td><input type="text" name="address"   
+			required="required"></td> 
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input type="submit" value="가입하기"

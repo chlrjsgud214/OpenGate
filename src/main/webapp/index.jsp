@@ -8,8 +8,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	location.href="noticeList.do";
-//	location.href="joinForm.do";
+//	location.href="noticeList.do";
+	location.href="joinForm.do";
 </script>
 </body>
 </html>
