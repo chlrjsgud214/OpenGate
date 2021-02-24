@@ -20,4 +20,4 @@
 		update replyBoard set replytext=#{replytext},
 			updatedate=sysdate where rno=#{rno}
 	</update>
-</mapper>
+</mapper>  
