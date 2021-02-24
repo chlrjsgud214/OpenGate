@@ -11,7 +11,7 @@
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
 		alert("회원가입이 되었습니다");
-		location.href="loginForm.do";
+		location.href="loginForm.og";
 	</script>
 </c:if>
 <c:if test="${result == 0 }">

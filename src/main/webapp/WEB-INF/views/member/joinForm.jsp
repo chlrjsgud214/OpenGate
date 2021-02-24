@@ -13,7 +13,7 @@
 			frm.id.focus();
 			return false;
 		}
-		$.post("idChk.do","id="+frm.id.value, function(data) {
+		$.post("idChk.og","id="+frm.id.value, function(data) {
 			$('#disp').html(data);
 		});
 	}
@@ -31,7 +31,7 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">회원 가입</h2>
-<form action="join.do" method="post" name="frm"
+<form action="join.og" method="post" name="frm"
 	onsubmit="return chk()">
 	<table class="table table-bordered">
 		<tr>
@@ -80,7 +80,7 @@
 				class="btn btn-danger">
 		</tr>
 	</table>
-	<a href="loginForm.do" class="btn btn-success">로그인</a>
+	<a href="loginForm.og" class="btn btn-success">로그인</a>
 </form>
 </div>
 </body>

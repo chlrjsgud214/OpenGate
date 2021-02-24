@@ -10,7 +10,7 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">로그인</h2>
-<form action="login.do">
+<form action="login.og">
 	<table class="table table-bordered">
 		<tr>
 			<th>아이디</th>
@@ -28,7 +28,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="로그인" class="btn btn-success">
-				<a href="joinForm.do" class="btn btn-info">회원가입</a>
+				<a href="joinForm.og" class="btn btn-info">회원가입</a>
 			</td>	
 		</tr>
 	</table>		
