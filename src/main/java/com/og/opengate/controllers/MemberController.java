@@ -24,6 +24,8 @@ public class MemberController {
 	public String idChk(String id) {
 		String data = "";
 		Member member = ms.select(id);
+		System.out.println("id-"+id);
+		System.out.println(member);
 		if(member == null) data = "사용 가능한 아이디입니다";
 		else data = "사용중인 아이디입니다";
 		return data;
