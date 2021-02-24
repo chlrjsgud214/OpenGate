@@ -29,4 +29,13 @@ public class NoticeServiceImpl implements NoticeService {
 	public int insert(Notice notice) {
 		return nd.insert(notice);
 	}
+
+	public void updateReadCount(int num) {
+		nd.updateReadCount(num);
+	}
+
+	@Override
+	public Notice select(int num) {
+		return nd.select(num);
+	}
 }

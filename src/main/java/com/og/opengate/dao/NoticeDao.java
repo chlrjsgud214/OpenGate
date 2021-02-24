@@ -14,4 +14,8 @@ public interface NoticeDao {
 
 	int insert(Notice notice);
 
+	void updateReadCount(int num);
+
+	Notice select(int num);
+
 }

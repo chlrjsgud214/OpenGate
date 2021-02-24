@@ -28,4 +28,13 @@ public class NoticeDaoImpl implements NoticeDao {
 	public int insert(Notice notice) {
 		return sst.insert("noticens.insert", notice);
 	}
+
+	public void updateReadCount(int num) {
+		sst.update("noticens.updateReadCount", num);
+	}
+
+	@Override
+	public Notice select(int num) {
+		return sst.selectOne("noticens.select", num);
+	}
 }

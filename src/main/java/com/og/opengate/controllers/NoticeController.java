@@ -25,7 +25,6 @@ public class NoticeController {
 		int total = ns.getTotal(notice);
 		int startRow = (currentPage - 1) * rowPerPage + 1;
 		int endRow = startRow + rowPerPage - 1; 
-		
 		notice.setStartRow(startRow);
 		notice.setEndRow(endRow);
 		
@@ -58,5 +57,13 @@ public class NoticeController {
 		model.addAttribute("result", result);
 		model.addAttribute("pageNum", pageNum);
 		return "/notice/noticeInsert";
+	}
+	@RequestMapping("noticeView")
+	public String noticeView(int num, String pageNum, Model model) {
+		ns.updateReadCount(num); // 조회수 1 증가
+		Notice notice = ns.select(num);
+		model.addAttribute("pageNum", pageNum);
+		model.addAttribute("notice", notice);
+		return "/notice/noticeView";
 	}
 }

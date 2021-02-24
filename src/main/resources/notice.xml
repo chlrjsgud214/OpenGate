@@ -36,4 +36,17 @@
 									where rn between #{startRow} and #{endRow}
 		
 	</select>
+	<select id="maxNum" resultType="integer">
+		select nvl(max(num), 0) + 1 from notice
+	</select>
+	<insert id="insert" parameterType="notice">
+		insert into notice values(#{num}, #{writer}, #{subject}, #{content}, #{email}, 
+									0, #{password}, #{ip}, sysdate, 'n')
+	</insert>
+	<update id="updateReadCount" parameterType="integer">
+		update notice set readcount=readcount+1 where num = #{num}
+	</update>
+	<select id="select" parameterType="integer" resultType="notice">
+		select * from notice where num=#{num}
+	</select>
 </mapper>

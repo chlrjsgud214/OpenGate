@@ -34,12 +34,8 @@
 						</c:if>
 						<c:if test="${notice.del != 'y' }">
 							<td title="${notice.content }">
-							<c:if test="${notice.re_level > 0 }">
-								<img alt="" src="resources/images/level.gif" height="5" width="${notice.re_level * 10 }">
-								<img alt="" src="resources/images/re.gif">
-							</c:if>
-							<a href="noticeView.do?num=${notice.num }&pageNum=${pb.currentPage}" 
-										class="btn btn-info btn-sm">${notice.subject }</a></td>
+								<a href="noticeView.og?num=${notice.num }&pageNum=${pb.currentPage}">
+									${notice.subject }</a></td>
 							<td>${notice.writer }</td>		
 							<td>${notice.readcount }</td>	
 							<td>${notice.reg_date }</td>		
@@ -51,36 +47,36 @@
 		<div align="center">
 			<ul class="pagination">
 				<c:if test="${pb.startPage > pb.pagePerBlock }">
-					<li><a href="noticeList.do?pageNum=1&search=${notice.search }&keyword=${notice.keyword}">
+					<li><a href="noticeList.og?pageNum=1&search=${notice.search }&keyword=${notice.keyword}">
 						<span class="glyphicon glyphicon-backward"></span></a>
 					</li>
-					<li><a href="noticeList.do?pageNum=${pb.startPage-1 }&search=${notice.search }&keyword=${notice.keyword}">
+					<li><a href="noticeList.og?pageNum=${pb.startPage-1 }&search=${notice.search }&keyword=${notice.keyword}">
 						<span class="glyphicon glyphicon-triangle-left"></span></a> 
 					</li>
 				</c:if>
 				<c:forEach var="i" begin="${pb.startPage }" end="${pb.endPage }">
 					<c:if test="${pb.currentPage == i }">
-						<li class="active"><a href="noticeList.do?pageNum=${i }&search=${notice.search }
+						<li class="active"><a href="noticeList.og?pageNum=${i }&search=${notice.search }
 													&keyword=${notice.keyword }">${i }</a>
 						</li>
 					</c:if>
 					<c:if test="${pb.currentPage != i }">
-						<li><a href="noticeList.do?pageNum=${i }&search=${notice.search }
+						<li><a href="noticeList.og?pageNum=${i }&search=${notice.search }
 													&keyword=${notice.keyword }">${i }</a>
 						</li>
 					</c:if>
 				</c:forEach>
 				<c:if test="${pb.endPage < pb.totalPage }">
-					<li><a href="noticeList.do?pageNum=${pb.endPage + 1 }&search=${notice.search }&keyword=${notice.keyword}">
+					<li><a href="noticeList.og?pageNum=${pb.endPage + 1 }&search=${notice.search }&keyword=${notice.keyword}">
 						<span class="glyphicon glyphicon-triangle-right"></span></a>
 					</li>
-					<li><a href="noticeList.do?pageNum=${pb.totalPage }&search=${notice.search }&keyword=${notice.keyword}">
+					<li><a href="noticeList.og?pageNum=${pb.totalPage }&search=${notice.search }&keyword=${notice.keyword}">
 						<span class="glyphicon glyphicon-forward"></span></a>
 					</li>
 				</c:if>
 			</ul>
 		</div>
-		<form action="noticeList.do">
+		<form action="noticeList.og">
 			<input type="hidden" name="pageNum" value="1">
 			<select name="search">
 				<c:forTokens var="sh" items="subject,content,subcon" delims="," varStatus="i">
@@ -96,8 +92,8 @@
 			<input type="submit" value="검색">
 		</form>
 		<div align="center">
-			<a href="noticeInsertForm.do?num=0&pageNum=1" class="btn btn-success">글쓰기</a>
-			<a href="noticeList.do" class="btn btn-default">공지사항</a>
+			<a href="noticeInsertForm.og?num=0&pageNum=1" class="btn btn-success">글쓰기</a>
+			<a href="noticeList.og" class="btn btn-default">공지사항</a>
 		</div>
 	</div>
 </body>

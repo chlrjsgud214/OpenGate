@@ -3,7 +3,7 @@
 <%@ include file="../header.jsp"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -19,7 +19,7 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">공지글 입력</h2>
-	<form action="noticeInsert.do" method="post">
+	<form action="noticeInsert.og" method="post">
 	<input type="hidden" name="num" value=${num }>
 	<input type="hidden" name="pageNum" value=${pageNum }>
 		<table class="table table-bordered">
