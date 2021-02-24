@@ -20,4 +20,12 @@ public class NoticeDaoImpl implements NoticeDao {
 	public List<Notice> noticeList(Notice notice) {
 		return sst.selectList("noticens.noticeList", notice);
 	}
+
+	public int maxNum() {
+		return sst.selectOne("noticens.maxNum");
+	}
+
+	public int insert(Notice notice) {
+		return sst.insert("noticens.insert", notice);
+	}
 }

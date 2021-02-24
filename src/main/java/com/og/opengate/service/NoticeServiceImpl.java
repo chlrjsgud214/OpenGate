@@ -21,4 +21,12 @@ public class NoticeServiceImpl implements NoticeService {
 	public List<Notice> noticeList(Notice notice) {
 		return nd.noticeList(notice);
 	}
+
+	public int maxNum() {
+		return nd.maxNum();
+	}
+
+	public int insert(Notice notice) {
+		return nd.insert(notice);
+	}
 }

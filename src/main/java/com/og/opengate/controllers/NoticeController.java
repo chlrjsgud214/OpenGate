@@ -2,6 +2,8 @@ package com.og.opengate.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +18,7 @@ public class NoticeController {
 	@Autowired
 	private NoticeService ns;
 	@RequestMapping("noticeList")
-	public String noticeList(String pageNum, Notice notice, Model model) {
+	public String noticeList(String pageNum, Notice notice, Model model ) {
 		if(pageNum == null || pageNum.equals("")) pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
 		int rowPerPage = 10; // 한 화면에 게시글 10개
@@ -45,5 +47,16 @@ public class NoticeController {
 		model.addAttribute("num",num);
 		model.addAttribute("pageNum",pageNum);
 		return "/notice/noticeInsertForm";
+	}
+	
+	@RequestMapping("noticeInsert")
+	public String noticeInsert(Notice notice, String pageNum, Model model, HttpServletRequest request) {
+		notice.setIp(request.getRemoteAddr());
+		int number = ns.maxNum();
+		notice.setNum(number);
+		int result = ns.insert(notice);
+		model.addAttribute("result", result);
+		model.addAttribute("pageNum", pageNum);
+		return "/notice/noticeInsert";
 	}
 }

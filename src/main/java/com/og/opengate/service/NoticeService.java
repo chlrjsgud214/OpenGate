@@ -10,4 +10,8 @@ public interface NoticeService {
 
 	List<Notice> noticeList(Notice notice);
 
+	int maxNum();
+
+	int insert(Notice notice);
+
 }
