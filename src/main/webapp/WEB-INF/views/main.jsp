@@ -10,8 +10,8 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">OpenGate</h2>
-	<a class="btn btn-default" href="noticeList.do">공지사항</a>
-	<a class="btn btn-default" href="joinForm.do">회원가입</a>
+	<a class="btn btn-default" href="noticeList.og">공지사항</a>
+	<a class="btn btn-default" href="joinForm.og">회원가입</a>
 </div>
 </body>
 </html>
