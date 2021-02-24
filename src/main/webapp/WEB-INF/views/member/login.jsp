@@ -19,7 +19,7 @@
 		alert("암호를 다시 입력해주세요");
 		history.back();
 	</script>
-</c:if>
+</c:if> 
 <c:if test="${result == -1 }">
 	<script type="text/javascript">
 		alert("없는 아이디입니다");

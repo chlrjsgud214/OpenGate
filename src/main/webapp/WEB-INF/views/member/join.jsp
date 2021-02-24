@@ -12,7 +12,7 @@
 	<script type="text/javascript">
 		alert("회원가입이 되었습니다");
 		location.href="loginForm.og";
-	</script>
+	</script> 
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
