@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productns">
+	<insert id="Productinsert" parameterType="product">
+		insert into product values (#{tema},#{content},#{startdate},#{enddate},
+			#{restdate},#{fileName},#{difficulty},#{fear},#{active})
+	</insert>
+	
+	<select id="Productselect" parameterType="String" resultType="product">
+		select * from product where tema=#{tema}
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		select count(*) from product
+	</select>
+	
+	<select id="productlist" parameterType="product" resultType="product">
+		select * from (select p.*,rownum rn from (select * from
+			product order by startdate desc) p) where rn between
+				#{startRow} and #{endRow}
+	</select>
+	
+	<delete id="productdelete" parameterType="String">
+		delete from product where tema=#{tema}
+	</delete>
+	
+	<update id="productUpdate" parameterType="product">
+		update product set tema=#{tema}, content=#{content}
+			<if test="fileName!=null">
+				, fileName=#{fileName}
+			</if> 
+			,difficulty=#{difficulty}, fear=#{fear}, active=#{active}
+				where tema=#{tema}
+	</update>
+</mapper>
