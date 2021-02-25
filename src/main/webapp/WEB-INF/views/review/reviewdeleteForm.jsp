@@ -18,7 +18,7 @@
 <body>
 	<div class="container" align="center">
 		<h2 class="text-primary">게시글 삭제</h2>
-		<form action="reviewdelete.do" name="frm" onsubmit="return chk()">
+		<form action="reviewdelete.og" name="frm" onsubmit="return chk()">
 			<input type="hidden" name="password2" value="${board.password }">
 			<input type="hidden" name="num" value="${board.num }"> <input
 				type="hidden" name="pageNum" value="${pageNum}">
