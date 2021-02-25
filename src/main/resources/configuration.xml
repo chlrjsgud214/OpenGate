@@ -5,19 +5,13 @@
 	<typeAliases>
 		<typeAlias alias="notice" type="com.og.opengate.model.Notice" />
 		<typeAlias alias="member" type="com.og.opengate.model.Member"/>
-<<<<<<< HEAD
 		<typeAlias alias="product" type="com.og.opengate.model.Product"/>
-=======
 		<typeAlias alias="reviewboard" type="com.og.opengate.model.ReviewBoard" />
->>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 	</typeAliases>
 	<mappers>
 		<mapper resource="notice.xml" />
 		<mapper resource="member.xml" />
-<<<<<<< HEAD
 		<mapper resource="Product.xml" />
-=======
 		<mapper resource="reviewboard.xml" />
->>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 	</mappers>
 </configuration>
