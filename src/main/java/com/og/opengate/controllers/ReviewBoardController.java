@@ -13,7 +13,7 @@ import com.og.opengate.service.ReviewPagingBean;
 public class ReviewBoardController {
 	@Autowired
 	private ReviewBoardService bs;
-	@RequestMapping("list")
+	@RequestMapping("reviewlist")
 	public String list(String pageNum,ReviewBoard board, Model model) {
 		if (pageNum == null || pageNum.equals("")) pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
@@ -34,9 +34,9 @@ public class ReviewBoardController {
 		model.addAttribute("no", no);
 		model.addAttribute("list", list);
 		model.addAttribute("total", total);
-		return "list";
+		return "/review/reviewlist";
 	}
-	@RequestMapping("insertForm")
+	@RequestMapping("reviewinsertForm")
 	public String insertForm(int num,String pageNum,Model model) {
 		int ref = 0, re_level = 0, re_step = 0;
 		if (num != 0) { // 답변글
@@ -50,10 +50,10 @@ public class ReviewBoardController {
 		model.addAttribute("ref", ref);
 		model.addAttribute("re_level", re_level);
 		model.addAttribute("re_step", re_step);
-		return "insertForm";
+		return "/review/reviewinsertForm";
 	}
 	// HttpServletRequest 입력한 ip추적
-	@RequestMapping("insert")
+	@RequestMapping("reviewinsert")
 	public String insert(ReviewBoard board, String pageNum, Model model,
 			HttpServletRequest request) {
 		board.setIp(request.getRemoteAddr());
@@ -70,42 +70,42 @@ public class ReviewBoardController {
 		int result = bs.insert(board);
 		model.addAttribute("result", result);
 		model.addAttribute("pageNum", pageNum);
-		return "insert";
+		return "/review/reviewinsert";
 	}
-	@RequestMapping("updateForm")
+	@RequestMapping("reviewupdateForm")
 	public String updateForm(int num, String pageNum, Model model) {
 		ReviewBoard board = bs.select(num);
 		model.addAttribute("board",board);
 		model.addAttribute("pageNum", pageNum);
-		return "updateForm";
+		return "/review/reviewupdateForm";
 	}
-	@RequestMapping("update")
+	@RequestMapping("reviewupdate")
 	public String update(ReviewBoard board, String pageNum, Model model) {
 		int result = bs.update(board);
 		model.addAttribute("result", result);
 		model.addAttribute("pageNum", pageNum);
-		return "update";
+		return "/review/reviewupdate";
 	}
-	@RequestMapping("deleteForm")
+	@RequestMapping("reviewdeleteForm")
 	public String deleteForm(int num, String pageNum, Model model) {
 		ReviewBoard board = bs.select(num);
 		model.addAttribute("board",board);
 		model.addAttribute("pageNum", pageNum);
-		return "deleteForm";
+		return "/review/reviewdeleteForm";
 	}
-	@RequestMapping("delete")
+	@RequestMapping("reviewdelete")
 	public String delete(int num, String pageNum, Model model) {
 		int result = bs.delete(num);
 		model.addAttribute("result", result);
 		model.addAttribute("pageNum", pageNum);
-		return "delete";
+		return "/review/reviewdelete";
 	}
-	@RequestMapping("view")
+	@RequestMapping("reviewview")
 	public String view(int num, String pageNum, Model model) {
 		bs.updateReadCount(num);  // 조회수 1증가 
 		ReviewBoard board = bs.select(num);
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("board", board);
-		return "view";
+		return "/review/reviewview";
 	}
 }

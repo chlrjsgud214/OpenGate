@@ -41,7 +41,7 @@
 				<td>${board.reg_date}</td>
 			</tr>
 			<tr>
-				<td colspan="2"><a href="list.og?pageNum=${pageNum}"
+				<td colspan="2"><a href="reviewlist.og?pageNum=${pageNum}"
 					class="btn btn-info">게시글 목록</a> <a
 					href="reviewupdateForm.og?num=${board.num }&pageNum=${pageNum}"
 					class="btn btn-warning">수정</a> <a

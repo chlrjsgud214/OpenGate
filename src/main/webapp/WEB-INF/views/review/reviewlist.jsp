@@ -44,7 +44,7 @@
 									<img alt="" src="resources/images/level.gif" height="5"
 										width="${board.re_level * 10}">
 									<img alt="" src="resources/images/re.gif">
-								</c:if> <a href="view.og?num=${board.num}&pageNum=${pb.currentPage}"
+								</c:if> <a href="reviewview.og?num=${board.num}&pageNum=${pb.currentPage}"
 								class="btn btn-info btn-sm">${board.subject}</a> <c:if
 									test="${board.readcount > 50 }">
 									<img alt="" src="resources/images/hot.gif">
