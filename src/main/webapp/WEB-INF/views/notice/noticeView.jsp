@@ -11,6 +11,16 @@
 		$('#noticeDisp').load('noticeList.og', 'pageNum=${pageNum}');
 	});
 </script>
+<script type="text/javascript">
+	function delConfirm(num,pageNum) {
+		var con = confirm("삭제하시겠습니까?");
+		if(con) location.href="noticeDelete.og?num="+num+"&pageNum="+pageNum;
+		else {
+			alert("삭제 취소");
+			return;
+		}
+	}
+</script>
 </head>
 <body>
 <div class="container" align="center">
@@ -35,8 +45,10 @@
 		<tr>
 			<td colspan="2">
 				<a href="noticeList.og?pageNum=${pageNum }" class="btn btn-info">공지사항</a>
-				<a href="noticeUpdateForm.og?num=${notice.num }&pageNum=${pageNum }" class="btn btn-warning">수정</a>
-				<a href="noticeDeleteForm.og?num=${notice.num }&pageNum=${pageNum }" class="btn btn-danger">삭제</a>
+				<c:if test="${id == 'master' }">
+					<a href="noticeUpdateForm.og?num=${notice.num }&pageNum=${pageNum }" class="btn btn-warning">수정</a>
+					<a class="btn btn-danger" onclick="delConfirm(${notice.num},${pageNum })">삭제</a>
+				</c:if>
 			</td>	
 		</tr>
 	</table>

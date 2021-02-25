@@ -33,8 +33,16 @@ public class NoticeDaoImpl implements NoticeDao {
 		sst.update("noticens.updateReadCount", num);
 	}
 
-	@Override
 	public Notice select(int num) {
 		return sst.selectOne("noticens.select", num);
+	}
+
+	public int update(Notice notice) {
+		return sst.update("noticens.update", notice);
+	}
+
+	@Override
+	public int delete(int num) {
+		return sst.update("noticens.delete", num);
 	}
 }

@@ -92,8 +92,11 @@
 			<input type="submit" value="검색">
 		</form>
 		<div align="center">
-			<a href="noticeInsertForm.og?num=0&pageNum=1" class="btn btn-success">글쓰기</a>
+			<c:if test="${id == 'master' }">
+				<a href="noticeInsertForm.og?num=0&pageNum=1&id=${id }" class="btn btn-success">글쓰기</a>
+			</c:if>
 			<a href="noticeList.og" class="btn btn-default">공지사항</a>
+			<a href="main.og" class="btn btn-default">메인</a>
 		</div>
 	</div>
 </body>

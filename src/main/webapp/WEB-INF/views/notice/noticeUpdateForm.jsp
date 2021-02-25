@@ -18,19 +18,18 @@
 </head>
 <body>
 <div class="container" align="center">
-	<h2 class="text-primary">공지글 입력</h2>
-	<form action="noticeInsert.og" method="post">
-	<input type="hidden" name="num" value=${num }>
+	<h2 class="text-primary">공지글 수정</h2>
+	<form action="noticeUpdate.og" method="post">
+	<input type="hidden" name="num" value=${notice.num }>
 	<input type="hidden" name="pageNum" value=${pageNum }>
-	<input type="hidden" name="id" value=${id }>
 		<table class="table table-bordered">
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="subject" required="required" autofocus="autofocus"></td>
+				<td><input type="text" name="subject" required="required" autofocus="autofocus" value=${notice.subject }></td>
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><textarea rows="5" cols="40" required="required" name="content"></textarea></td>
+				<td><textarea rows="5" cols="40" required="required" name="content">${notice.content }</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="입력" class="btn btn-success">

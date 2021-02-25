@@ -38,4 +38,13 @@ public class NoticeServiceImpl implements NoticeService {
 	public Notice select(int num) {
 		return nd.select(num);
 	}
+
+	public int update(Notice notice) {
+		return nd.update(notice);
+	}
+
+	@Override
+	public int delete(int num) {
+		return nd.delete(num);
+	}
 }

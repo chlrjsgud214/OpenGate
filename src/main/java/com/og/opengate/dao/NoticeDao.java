@@ -18,4 +18,8 @@ public interface NoticeDao {
 
 	Notice select(int num);
 
+	int update(Notice notice);
+
+	int delete(int num);
+
 }
