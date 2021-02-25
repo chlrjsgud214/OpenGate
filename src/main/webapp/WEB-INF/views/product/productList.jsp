@@ -105,7 +105,7 @@ h1 {
 	color: black;
 }
 </style>
-<title>Insert title here1</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<div class="container">
