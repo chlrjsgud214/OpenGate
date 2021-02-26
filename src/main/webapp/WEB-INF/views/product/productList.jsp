@@ -95,7 +95,6 @@ h1 {
 }
 .p {
 	margin-left: 47%;
-	background-color: gray;
 }
 .pagination li.a a {
 	color: white; !important; background: #BDBDBD; !important; 
@@ -145,7 +144,7 @@ h1 {
 			</ul>
 		</c:forEach>
 		<div>
-		<ul class="pagination p">
+		<ul class="pagination p col-md-3">
 				<c:if test="${pb.startPage > pb.pagePerBlock }">
 					<li><a href="productList.og?pageNum=1">◀◀
 					</a></li>
