@@ -16,7 +16,7 @@
 	<a class="btn btn-default" href="productList.og">테마소개</a>
 	<a class="btn btn-default" href="productInsertForm.og">테마등록</a>
 	<a class="btn btn-default" href="updateForm.og">회원정보 수정</a>
-	<a class="btn btn-default" href="logout.og">로그아웃</a>
+	<a class="btn btn-default" href="logout.og">로그아웃</a> 
 </div>
 </body>
 </html>
