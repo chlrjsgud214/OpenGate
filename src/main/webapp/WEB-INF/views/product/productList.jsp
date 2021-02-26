@@ -10,7 +10,6 @@ body { background-color: #fff;
 	/* background-image: url('resources/upload/x-file.jpg'); */
 }
 h1 {
-	font-weight: bold;
 	letter-spacing:-2px;
 }
 .star{margin-top:10px;}
@@ -20,12 +19,12 @@ h1 {
 
 .tema-items {list-style: none; margin: 0;}
 .tema-items {}
-.tema-items > li {float: left; padding: 0; margin: 0 auto;}
+.tema-items > li {float: left; padding: 0; margin-left: 30px;}
 
 .tema-items{margin-top:40px;}
 .tema-item { width: 300px;
 }
-.tema-item .item-main {text-align: left; padding: 10px;}
+.tema-item .item-main { padding: 15px;}
 .tema-item img {width: 100%; height: 47%;}
 
 
@@ -43,7 +42,7 @@ h1 {
    left: 0px;
 }
 
-.tema-image { margin: auto; }
+.tema-image { margin-right: 20px; }
 .tema-image a,
 .tema-image a img {
    display: block;
@@ -95,7 +94,7 @@ h1 {
 	border-radius: 7px 7px 7px 7px;
 }
 .p {
-	margin-left: 48%;
+	margin-left: 47%;
 	background-color: gray;
 }
 .pagination li.a a {
@@ -109,7 +108,7 @@ h1 {
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center">테마</h1>
+		<h1 class="text-center">테마 소개</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
 		<c:forEach var="product" items="${list}">
 			<ul class="tema-items col-md-4">
