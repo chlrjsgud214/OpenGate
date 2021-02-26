@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-	location.href="main.og"; 
+	location.href="main.og";
 </script>
 </body>
 </html> 
