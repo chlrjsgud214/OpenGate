@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.og.opengate.model.Member;
 import com.og.opengate.model.Product;
+import com.og.opengate.service.MemberService;
 import com.og.opengate.service.PagingBean;
 import com.og.opengate.service.ProductService;
 
@@ -21,9 +23,15 @@ import com.og.opengate.service.ProductService;
 public class ProductController {
 	@Autowired
 	private ProductService ps;
+	@Autowired
+	private MemberService ms;
 	
 	@RequestMapping("productInsertForm")
 	public String productForm(String pageNum, HttpSession session, Model model) {
+		String id=(String) session.getAttribute("id");
+		if (id.equals("master")) {
+			session.setAttribute("id", id);
+		}
 		model.addAttribute("pageNum", pageNum);
 		return "product/productInsertForm";
 	}
@@ -32,6 +40,8 @@ public class ProductController {
 	public String productInsert(Model model, Product product, HttpSession session,
 			String pageNum) throws IOException {
 		int result=0;
+		String id=(String) session.getAttribute("id");
+		if (id.equals("master")) {
 		Product pro=ps.Productselect(product.getTema());
 		if (pro==null) {
 			String fileName=product.getFileName1().getOriginalFilename();
@@ -42,6 +52,7 @@ public class ProductController {
 			fos.write(product.getFileName1().getBytes());
 			fos.close();
 			result=ps.Productinsert(product);
+			} 
 		} else result=-1;
 		model.addAttribute("result", result);
 		model.addAttribute("pageNum", pageNum);
@@ -51,6 +62,7 @@ public class ProductController {
 	@RequestMapping("productList")
 	public String productList(Model model, HttpSession session,
 			Product product, String pageNum) {
+		String id=(String) session.getAttribute("id");
 		if (pageNum == null || pageNum.equals("")) pageNum="1";
 		int currentPage=Integer.parseInt(pageNum);
 		int rowPerPage=6;
@@ -73,6 +85,7 @@ public class ProductController {
 	@RequestMapping("productDetail")
 	public String productDetail(String tema, Model model, HttpSession session,
 			String pageNum) {
+		String id=(String) session.getAttribute("id");
 		Product product=ps.Productselect(tema);
 		model.addAttribute("product", product);
 		model.addAttribute("pageNum", pageNum);
@@ -82,6 +95,7 @@ public class ProductController {
 	@RequestMapping("productDelete")
 	public String productDelete(Model model, HttpSession session, String tema,
 			String pageNum) {
+		String id=(String) session.getAttribute("id");
 		int result=ps.productdelete(tema);
 		model.addAttribute("result", result);
 		model.addAttribute("pageNum", pageNum);
@@ -91,6 +105,7 @@ public class ProductController {
 	@RequestMapping("productUpdateForm")
 	public String productUpdateForm(Model model, HttpSession session,
 			String tema, String pageNum) {
+		String id=(String) session.getAttribute("id");
 		Product product=ps.Productselect(tema);
 		model.addAttribute("product", product);
 		model.addAttribute("pageNum", pageNum);
@@ -99,6 +114,7 @@ public class ProductController {
 	@RequestMapping("productUpdate")
 	public String productUpdate(Model model, HttpSession session,
 			Product product, String pageNum) throws IOException {
+		String id=(String) session.getAttribute("id");
 		int result=0;
 		String fileName=product.getFileName1().getOriginalFilename();
 		if (fileName!=null && !fileName.equals("")) {

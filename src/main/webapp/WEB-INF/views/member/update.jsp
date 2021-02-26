@@ -10,20 +10,14 @@
 <body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("등록되었습니다.");
-		location.href="main.og";
+		alert("수정되었습니다");
+		location.href="main.og";		
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("다시 시도해주세요.");
-		history.back();
-	</script>
-</c:if>
-<c:if test="${result == -1 }">
-	<script type="text/javascript">
-		alert("권한이 없습니다.");
-		history.back();
+		alert("다시 입력해주세요");
+		history.back();		
 	</script>
 </c:if>
 </body>

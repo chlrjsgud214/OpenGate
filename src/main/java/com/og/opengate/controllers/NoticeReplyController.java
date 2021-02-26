@@ -10,6 +10,6 @@ import com.og.opengate.service.NoticeService;
 public class NoticeReplyController {
 	@Autowired
 	private NoticeReplyService nrs;
-	@Autowired
-	private NoticeService ns;
+	@Autowired  
+	private NoticeService ns; 
 }

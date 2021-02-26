@@ -56,5 +56,31 @@ public class MemberController {
 		model.addAttribute("result", result);
 		return "/member/login";
 	}
+	@RequestMapping("updateForm")
+	public String inserForm(String id, Model model) {
+		Member member = ms.select(id);
+		model.addAttribute("member", member);
+		return "/member/updateForm";
+	}
+//	@RequestMapping("update")
+//	public String update(Member member, Model model) {
+//		int result = ms.update(member);
+//		model.addAttribute("result", result);
+//		return "/member/update";
+//	}
+	@RequestMapping("update")
+	public String update(Member member, Model model) {
+		int result = 0;
+		Member mem = ms.select(member.getId());
+		if(mem != null) result = ms.update(member);
+		else result = -1;
+		model.addAttribute("result", result);
+		return "/member/update";
+	}
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "/member/logout";
+	}
 	
 }
