@@ -75,6 +75,10 @@ public class NoticeController {
 		String id = (String)session.getAttribute("id");
 		ns.updateReadCount(num); // 조회수 1 증가
 		Notice notice = ns.select(num);
+		if(id != null) {
+			Member member = ms.select(id);
+			model.addAttribute("member", member);
+		}
 		model.addAttribute("id", id);
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("notice", notice);

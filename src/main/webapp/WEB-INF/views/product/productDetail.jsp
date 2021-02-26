@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <style type="text/css">
 h1 {
-	font-weight: bold;
 	letter-spacing:-2px;
 	text-align: center;
 }
@@ -42,18 +41,27 @@ h1 {
 	border-radius: 7px 7px 7px 7px;
 	width: 35%;
 }
+.zero {
+	width: 100%; height: 85%;
+	float: right;
+	position: relative;
+}
 </style>
 <script type="text/javascript">
 	function del(tema) {
 		var on=confirm("정말 삭제하시겠습니까?");
 		if (on) location.href="productDelete.og?tema="+tema;
 	}
+	
+	$(function() {
+		$('#disp').load("reviewlist.og");
+	});
 </script>
 <title>Insert title here</title>
 </head>
 <body>
 	<div class="container">
-		<h1>테마 상세설명</h1>
+		<h1>테마 상세 설명</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">___________</div>
 		<ul class="tema-items col-md-3">
 			<li class="tema-item">
@@ -87,6 +95,8 @@ h1 {
 				</c:if>
 			</li>
 		</ul>
+		<div class="col-md-3 zero"></div>
+		<div id="disp"></div>
 	</div>
 </body>
 </html>
