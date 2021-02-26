@@ -3,6 +3,20 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace xml을 구별하기 위한 이름 -->
 <!-- resultMap는 table에 컬럼명과 class에 변수명이 다를 때 mapping하는 용도 -->
-<mapper namespace="noticerbns">
-
+<mapper namespace="noticerbdns">
+	<select id="list" parameterType="integer" resultType="noticerbd">
+		select * from noticeReplyBoard where bno=#{bno} order by rno desc
+	</select>
+	<insert id="insert" parameterType="noticerbd">
+		<selectKey keyProperty="rno" order="BEFORE" resultType="integer">
+			select nvl(max(rno), 0) + 1 from noticeReplyBoard
+		</selectKey>
+		insert into noticeReplyBoard values(#{rno}, #{bno}, #{replytext}, #{replyer}, #{password}, sysdate, sysdate, 'n')
+	</insert>
+	<update id="delete" parameterType="integer">
+		update noticeReplyBoard set del='y' where rno=#{rno }
+	</update>
+	<update id="update" parameterType="noticerbd">
+		update noticeReplyBoard set replytext=#{replytext }, updatedate=sysdate where rno=#{rno }
+	</update>
 </mapper>
