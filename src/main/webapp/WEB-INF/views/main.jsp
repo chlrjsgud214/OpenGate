@@ -11,7 +11,10 @@
 <div class="container" align="center">
 	<h2 class="text-primary">OpenGate</h2>
 	<a class="btn btn-default" href="noticeList.og">공지사항</a>
+	<a class="btn btn-default" href="reviewlist.og">리뷰게시판</a>
 	<a class="btn btn-default" href="joinForm.og">회원가입</a>
+	<a class="btn btn-default" href="productList.og">테마소개</a>
+	<a class="btn btn-default" href="productInsertForm.og">테마등록</a>
 </div>
 </body>
 </html>

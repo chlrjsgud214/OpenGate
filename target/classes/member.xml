@@ -9,4 +9,8 @@
 		insert into member values (#{id},#{password},#{name},
 			#{phone},#{email},#{address},sysdate)
 	</insert>
+	<update id="update" parameterType="member">
+		update member set password=#{password},name=#{name},
+		phone=#{phone},email=#{email},address=#{address} where id=#{id}
+	</update>
 </mapper>

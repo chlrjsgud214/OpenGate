@@ -15,4 +15,8 @@ public class MemberDaoImpl implements MemberDao{
 	public int insert(Member member) {
 		return sst.insert("memberns.insert", member);
 	}
+	@Override
+	public int update(Member member) {
+		return sst.update("memberns.update", member);
+	}
 }

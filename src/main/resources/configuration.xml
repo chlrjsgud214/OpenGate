@@ -5,9 +5,13 @@
 	<typeAliases>
 		<typeAlias alias="notice" type="com.og.opengate.model.Notice" />
 		<typeAlias alias="member" type="com.og.opengate.model.Member"/>
+		<typeAlias alias="product" type="com.og.opengate.model.Product"/>
+		<typeAlias alias="reviewboard" type="com.og.opengate.model.ReviewBoard" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="notice.xml" />
 		<mapper resource="member.xml" />
+		<mapper resource="Product.xml" />
+		<mapper resource="reviewboard.xml" />
 	</mappers>
 </configuration>
