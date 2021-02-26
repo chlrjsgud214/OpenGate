@@ -78,11 +78,13 @@ h1 {
 					<div style="color: #BDBDBD;" align="left">______________________</div>
 					<br>
 				</div>
+				<c:if test="${id == 'master' }">
 				<div>
 					<a class="btn btn-default b" onclick="del(${product.tema})">삭제</a>
 					<a class="btn btn-default b"
 						href="productUpdateForm.og?tema=${product.tema}">수정</a>
 				</div>
+				</c:if>
 			</li>
 		</ul>
 	</div>

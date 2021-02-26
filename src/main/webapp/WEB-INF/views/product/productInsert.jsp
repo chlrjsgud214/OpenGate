@@ -22,7 +22,7 @@
 </c:if>
 <c:if test="${result == -1 }">
 	<script type="text/javascript">
-		alert("이미 있는 테마입니다.");
+		alert("권한이 없습니다.");
 		history.back();
 	</script>
 </c:if>
