@@ -85,7 +85,7 @@
 				</tr>
 			</c:if>
 			<c:if test="${id == 'master' || id != null }">
-				<input type="hidden" name="replyer" value="${id }">
+				<input type="hidden" name="replyer" value="${id }"> 
 				<input type="hidden" name="password" value="${member.password }">
 			</c:if>
 			<tr>
