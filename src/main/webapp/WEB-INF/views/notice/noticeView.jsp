@@ -15,7 +15,10 @@
 			$.post('${path}/noticeReplyInsert.og', sendData, function(data) {
 				alert('댓글이 작성 되었습니다');
 				$('#noticeReplyDisp').html(data);
-				frm.replytext.value="";
+				frm1.replyer.value="";
+				frm1.password.value="";
+				frm1.password2.value="";
+				frm1.replytext.value="";
 			});
 		});
 	});

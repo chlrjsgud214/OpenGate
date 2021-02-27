@@ -40,6 +40,6 @@ public class NoticeReplyController {
 	@RequestMapping("noticeReplyUpdate")
 	public String noticeReplyUpdate(NoticeReplyBoard nrb) {
 		nrs.update(nrb);
-		return "redirect:noticeReplyList.og/bno?="+nrb.getBno();
+		return "redirect:noticeReplyList.og?bno="+nrb.getBno();
 	}	
 }
