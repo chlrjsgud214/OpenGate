@@ -36,4 +36,18 @@ public class QnAServiceImpl implements QnAService {
 	public int insert(QnA qna) {
 		return qd.insert(qna);
 	}
+
+	public void updateReadCount(int num) {
+		qd.updateReadCount(num);
+	}
+
+	public int delete(int num) {
+		return qd.delete(num);
+	}
+
+	public int update(QnA qna) {
+		return qd.update(qna);
+	}
+
+
 }

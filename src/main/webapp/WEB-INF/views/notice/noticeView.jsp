@@ -51,14 +51,15 @@
 		<tr>
 			<td>제목</td>
 			<td>${notice.subject }</td>
-			<td>작성일</td>
-			<td>${notice.reg_date }</td>
-		</tr>
-		<tr>
 			<td>작성자</td>
 			<td>${notice.writer }</td>
+			
+		</tr>
+		<tr>
 			<td>이메일</td>
 			<td>${notice.email }</td>
+			<td>작성일</td>
+			<td>${notice.reg_date }</td>
 		</tr>
 		<tr>
 			<td>내용</td>
