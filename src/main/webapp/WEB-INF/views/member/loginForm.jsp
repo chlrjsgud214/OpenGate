@@ -29,6 +29,7 @@
 			<td colspan="2" align="center">
 				<input type="submit" value="로그인" class="btn btn-success">
 				<a href="joinForm.og" class="btn btn-info">회원가입</a>
+				<a href="main.og" class="btn btn-default">메인</a>
 			</td>	
 		</tr>
 	</table>		

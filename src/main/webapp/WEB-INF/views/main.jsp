@@ -17,7 +17,7 @@
 	<a class="btn btn-default" href="productInsertForm.og">테마등록</a>
 	<a class="btn btn-default" href="updateForm.og">회원정보 수정</a>
 	<a class="btn btn-default" href="logout.og">로그아웃</a> 
-	<a class="btn btn-default" href="qnalist.og">Q&A</a>
+	<a class="btn btn-default" href="qnaList.og">Q&A</a>
 	
 </div>
 </body>
