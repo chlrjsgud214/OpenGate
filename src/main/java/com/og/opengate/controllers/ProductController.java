@@ -13,8 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.og.opengate.model.Member;
+import com.og.opengate.model.Loc;
 import com.og.opengate.model.Product;
+import com.og.opengate.service.LocService;
 import com.og.opengate.service.MemberService;
 import com.og.opengate.service.PagingBean;
 import com.og.opengate.service.ProductService;
@@ -25,14 +26,13 @@ public class ProductController {
 	private ProductService ps;
 	@Autowired
 	private MemberService ms;
+	@Autowired
+	private LocService ls;
 	
 	@RequestMapping("productInsertForm")
-	public String productForm(String pageNum, HttpSession session, Model model) {
-		String id=(String) session.getAttribute("id");
-		if (id.equals("master")) {
-			session.setAttribute("id", id);
-		}
-		model.addAttribute("pageNum", pageNum);
+	public String productForm(Model model, HttpSession session, Loc loc) {
+		List<Loc> list=ls.LocList(loc);
+		model.addAttribute("list", list);
 		return "product/productInsertForm";
 	}
 	

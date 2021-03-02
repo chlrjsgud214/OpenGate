@@ -132,6 +132,7 @@ h1 {
 							<br>
 							<span>난이도 : ${product.difficulty}</span><br> <span>공포도
 								: ${product.fear}</span><br> <span>활동성 : ${product.active}</span><br>
+								<span>예약 가능 지점 : ${product.locName}</span><br>
 						</div>
 						<div align="center">
 							<div style="color: #BDBDBD;" align="center">______________________</div>
@@ -168,6 +169,17 @@ h1 {
 				</c:if>
 		</ul>
 	</div>
+	<c:if test="${id == 'master' }">
+	<div style="margin-top: 100%; position:absolute; margin-left: 70px;">
+		<a class="btn btn-default b" href="productInsertForm.og">테마 등록</a>
+		<a class="btn btn-default b" href="main.og">메인</a>
+	</div>
+	</c:if>
+	<c:if test="${id != 'master' }">
+	<div style="margin-top: 100%; position:absolute; margin-left: 70px;">
+		<a class="btn btn-default b" href="main.og">메인</a>
+	</div>
+	</c:if>
 	</div>
 </body>
 </html>

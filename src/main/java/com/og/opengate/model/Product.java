@@ -17,6 +17,7 @@ public class Product {
 	private String difficulty;
 	private String fear;
 	private String active;
+	private String locName;
 	
 	private MultipartFile fileName1;
 	

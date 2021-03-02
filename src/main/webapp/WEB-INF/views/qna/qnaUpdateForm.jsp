@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
+<script type="text/javascript"> 
 	function back() {
 		con = confirm("이 페이지를 벗어나시겠습니까?");
 		if(con) history.go(-1);
