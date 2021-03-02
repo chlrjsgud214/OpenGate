@@ -84,7 +84,15 @@ h1 {
 							<option>★★★
 							<option>★★★★
 							<option>★★★★★
+					</select></td></tr>
+				<tr>
+					<th>지점</th>
+					<td><select name="locName">
+						<c:forEach var="loc" items="${list }">
+							<option>${loc.locName}
+						</c:forEach>
 					</select>
+				<tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" value="등록"
 						class="btn btn-sm btn-default b"> <a href="main.og"

@@ -11,14 +11,14 @@
 		$('#noticeDisp').load('noticeList.og', 'pageNum=${pageNum}');
 		$('#noticeReplyDisp').load('noticeReplyList.og', 'bno=${notice.num}');
 		$('#noticeReplyInsert').click(function() {
-			var sendData = $('#frm').serialize();
-			$.post('${path}/noticeReplyInsert', sendData, function(data) {
+			var sendData = $('#frm1').serialize();
+			$.post('${path}/noticeReplyInsert.og', sendData, function(data) {
 				alert('댓글이 작성 되었습니다');
 				$('#noticeReplyDisp').html(data);
-				frm.replyer.value="";
-				frm.password.value="";
-				frm.password2.value="";
-				frm.replytext.value="";
+				frm1.replyer.value="";
+				frm1.password.value="";
+				frm1.password2.value="";
+				frm1.replytext.value="";
 			});
 		});
 	});
@@ -35,7 +35,7 @@
 </script>
 <script type="text/javascript">
 	function chk() {
-		if(frm.password.value != frm.password2.value) {
+		if(frm1.password.value != frm1.password2.value) {
 			alert("비밀번호가 일치하지 않습니다");
 			frm.password.focus();
 			frm.password.value="";
@@ -73,8 +73,8 @@
 			</td>	
 		</tr>
 	</table>
-	<form action="" name="frm" id="frm">
-		<input type="hidden" name="bno" value="${board.num }">
+	<form action="" name="frm1" id="frm1">
+		<input type="hidden" name="bno" value="${notice.num }">
 			<h2 class="text-primary">댓글 작성</h2>
 		<table class="table table-hover">
 			<c:if test="${id == null || id == '' }">
@@ -88,7 +88,7 @@
 				</tr>
 			</c:if>
 			<c:if test="${id == 'master' || id != null }">
-				<input type="hidden" name="replyer" value="${id }">
+				<input type="hidden" name="replyer" value="${id }"> 
 				<input type="hidden" name="password" value="${member.password }">
 			</c:if>
 			<tr>

@@ -4,7 +4,7 @@
 <mapper namespace="productns">
 	<insert id="Productinsert" parameterType="product">
 		insert into product values (#{tema},#{content},#{startdate},#{enddate},
-			#{restdate},#{fileName},#{difficulty},#{fear},#{active})
+			#{restdate},#{fileName},#{difficulty},#{fear},#{active},#{locName})
 	</insert>
 	
 	<select id="Productselect" parameterType="String" resultType="product">

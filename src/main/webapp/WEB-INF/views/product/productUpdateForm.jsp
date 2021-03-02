@@ -82,8 +82,16 @@ h1 {
 					</select></td>
 				</tr>
 				<tr>
+					<th>지점</th>
+					<td><select name="locName">
+						<option>마포점
+						<option>광교점
+						<option>부평점
+					</select>
+				<tr>
+				<tr>
 					<td colspan="2" align="center"><input type="submit" value="수정"
-						class="btn btn-default b"> <a href="productList.og"
+						class="btn btn-default b"> <a href="productDetail.og?tema=${product.tema}"
 						class="btn btn-default b">이전</a></td>
 				</tr>
 			</table>

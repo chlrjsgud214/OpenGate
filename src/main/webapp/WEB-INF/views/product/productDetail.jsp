@@ -35,7 +35,7 @@ h1 {
  	margin: 60px;
 	margin-bottom: 0;
 }
-.b {
+.bb {
  	margin-left : 65px;
 	margin-bottom: 10px;
 	border-radius: 7px 7px 7px 7px;
@@ -44,15 +44,10 @@ h1 {
 .zero {
 	width: 100%; height: 85%;
 	float: right;
-	position: relative;
+	position: absolute;
 }
 </style>
-<script type="text/javascript">
-	function del(tema) {
-		var on=confirm("정말 삭제하시겠습니까?");
-		if (on) location.href="productDelete.og?tema="+tema;
-	}
-	
+<script type="text/javascript">	
 	$(function() {
 		$('#disp').load("reviewlist.og");
 	});
@@ -83,13 +78,14 @@ h1 {
 					<div>난이도 : ${product.difficulty}</div>
 					<div>공포도 : ${product.fear}</div>
 					<div>활동성 : ${product.active}</div>
+					<div>예약 가능 지점 : ${product.locName}</div>
 					<div style="color: #BDBDBD;" align="left">______________________</div>
 					<br>
 				</div>
 				<c:if test="${id == 'master' }">
 				<div>
-					<a class="btn btn-default b" onclick="del(${product.tema})">삭제</a>
-					<a class="btn btn-default b"
+					<a class="btn btn-default bb" href="productDelete.og?tema=${product.tema}">삭제</a>
+					<a class="btn btn-default bb"
 						href="productUpdateForm.og?tema=${product.tema}">수정</a>
 				</div>
 				</c:if>

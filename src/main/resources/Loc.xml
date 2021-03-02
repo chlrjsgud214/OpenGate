@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="locns">
+	<select id="LocList" parameterType="loc" resultType="loc">
+		select * from loc order by locName desc
+	</select>
+	
+	<select id="locselect" parameterType="String" resultType="loc">
+		select * from loc where locName=#{locName}
+	</select>
+	
+	<insert id="locinsert" parameterType="loc">
+		insert into loc values (#{locName}, #{locAddr}, #{locTel})
+	</insert>
+	
+	<update id="locUpdate" parameterType="loc">
+		update loc set locAddr=#{locAddr}, locTel=#{locTel}
+			where locName=#{locName}
+	</update>
+	
+	<delete id="locDelete" parameterType="String">
+		delete from loc where locName=#{locName}
+	</delete>
+</mapper>

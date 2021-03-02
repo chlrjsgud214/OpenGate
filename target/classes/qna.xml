@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace xml을 구별하기 위한 이름 -->
+<!-- resultMap는 table에 컬럼명과 class에 변수명이 다를 때 mapping하는 용도 -->
+<mapper namespace="qnans">
+	<select id="getTotal" parameterType="qna" resultType="integer">
+		select count(*) from QnA
+			<where>
+				<if test="keyword != null and keyword != ''">
+					<if test="search == 'subcon'">
+						subject like '%' || #{keyword} || '%' or
+						content like '%' || #{keyword} || '%'
+					</if>
+					<if test="search != 'subcon'">
+						${search} like '%' || #{keyword} || '%'
+					</if>
+				</if>
+			</where>
+	</select>
+	<select id="list" parameterType="qna" resultType="qna">
+		select * from (select a.*, rowNum rn from
+				(select * from qna 
+					<where>
+						<if test="keyword != null and keyword != ''">
+							<if test="search == 'subcon'">
+								subject like '%' || #{keyword} || '%' or
+								content like '%' || #{keyword} || '%'
+							</if>
+							<if test="search != 'subcon'">
+								${search} like '%' || #{keyword} || '%'
+							</if>
+						</if>
+					</where>	
+				order by ref desc, re_step) a)	
+					where rn between #{startRow} and #{endRow}
+	</select>
+	<select id="select" parameterType="integer" resultType="qna">
+		select * from qna where num=#{num}
+	</select>
+	<select id="maxNum" resultType="integer">
+		select nvl(max(num), 0) + 1 from qna
+	</select>
+	<update id="updateStep" parameterType="integer">
+		update qna set re_step = re_step + 1 where ref = #{ref} and re_step > #{re_step}
+	</update>
+	<insert id="insert" parameterType="qna">
+		insert into qna values(#{num }, #{writer }, #{subject }, #{content }, #{email }, 0, #{password }, #{ref },
+									#{re_step }, #{re_level }, #{ip }, sysdate, 'n')
+	</insert>
+</mapper>
