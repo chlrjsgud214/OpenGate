@@ -37,9 +37,12 @@ h1 {
 .pp {
 	text-align: left;
 }
-.gg {
+#gg {
 	border-radius: 7px 7px 7px 7px;
-	margin-left: 10px;
+	margin-top: 35px;
+}
+.ff {
+	color: white;
 }
 </style>
 <script type="text/javascript">
@@ -55,9 +58,9 @@ h1 {
 		<h1>지점</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
 		<br><table class="table loc-item">
-			<div align="center" class="u">
+			<div align="center" class="u ff">
 					<c:forEach var="o" items="${list}">
-						<span><a class="tt"
+						<span><a class="tt ff"
 							href="locDetail.og?locName=${o.locName}"> ${o.locName}</a></span>
 					</c:forEach>	
 								
@@ -242,9 +245,9 @@ h1 {
 		</table>
 		<div id="disp"></div>
 		<c:if test="${id == 'master' }">
-		<div style="margin-left: 84px;" class="gg">
-			<a href="locUpdateForm.og?locName=${l.locName}" class="btn btn-default ">지점 수정</a>
-			<a class="btn btn-default" href="locDelete.og?locName=${l.locName}">지점 삭제</a>
+		<div style="margin-left: 84px;">
+			<a href="locUpdateForm.og?locName=${l.locName}" id="gg" class="btn btn-default">지점 수정</a>
+			<a id="gg" class="btn btn-default" href="locDelete.og?locName=${l.locName}">지점 삭제</a>
 		<br><br><br>
 		</div>
 		</c:if>

@@ -96,7 +96,7 @@ h1 {
 	color: black; font-weight: bold;
 	font-size: 18px;
 }
-.b {
+#b {
 	border-radius: 7px 7px 7px 7px;
 }
 .p {
@@ -147,7 +147,7 @@ h1 {
 						<div align="center">
 							<div style="color: #BDBDBD;" align="center">______________________</div>
 							<br>
-							<a class="btn btn-default b" href="#"
+							<a id="b" class="btn btn-default" href="#"
 								style="border: 1px solid; width: 85%;">예약하기</a>
 						</div>
 					</div>
@@ -181,13 +181,13 @@ h1 {
 	</div>
 	<c:if test="${id == 'master' }">
 	<div style="margin-top: 100%; position:absolute; margin-left: 70px;">
-		<a class="btn btn-default b" href="productInsertForm.og">테마 등록</a>
-		<a class="btn btn-default b" href="main.og">메인</a>
+		<a id="b" class="btn btn-default" href="productInsertForm.og">테마 등록</a>
+		<a id="b" class="btn btn-default" href="main.og">메인</a>
 	</div>
 	</c:if>
 	<c:if test="${id != 'master' }">
 	<div style="margin-top: 100%; position:absolute; margin-left: 70px;">
-		<a class="btn btn-default b" href="main.og">메인</a>
+		<a id="b" class="btn btn-default" href="main.og">메인</a>
 	</div>
 	</c:if>
 	</div>
