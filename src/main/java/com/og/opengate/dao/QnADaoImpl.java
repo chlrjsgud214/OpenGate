@@ -36,4 +36,16 @@ public class QnADaoImpl implements QnADao {
 	public int insert(QnA qna) {
 		return sst.insert("qnans.insert", qna);
 	}
+
+	public void updateReadCount(int num) {
+		sst.update("qnans.updateReadCount", num);
+	}
+
+	public int delete(int num) {
+		return sst.update("qnans.delete", num);
+	}
+
+	public int update(QnA qna) {
+		return sst.update("qnans.update", qna);
+	}
 }

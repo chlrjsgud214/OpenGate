@@ -18,4 +18,10 @@ public interface QnAService {
 
 	int insert(QnA qna);
 
+	void updateReadCount(int num);
+
+	int delete(int num);
+
+	int update(QnA qna);
+
 }

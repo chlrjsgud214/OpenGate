@@ -79,4 +79,46 @@ public class QnAController {
 		model.addAttribute("pageNum", pageNum);
 		return "/qna/qnaInsert";
 	}
+	@RequestMapping("qnaView")
+	public String qnaView(int num, String pageNum, Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		qs.updateReadCount(num);
+		QnA qna = qs.select(num);
+		model.addAttribute("pageNum", pageNum);
+		model.addAttribute("qna", qna);
+		model.addAttribute("id", id);
+		return "/qna/qnaView";
+	}
+	@RequestMapping("qnaDeleteForm")
+	public String qnaDeleteForm(int num, String pageNum, Model model) {
+		QnA qna = qs.select(num);
+		model.addAttribute("qna", qna);
+		model.addAttribute("num", num);
+		model.addAttribute("pageNum", pageNum);
+		return "/qna/qnaDeleteForm";
+	}
+	
+	@RequestMapping("qnaDelete")
+	public String qnaDelete(int num, int pageNum, Model model) {
+		int result = qs.delete(num);
+		model.addAttribute("result", result);
+		model.addAttribute("pageNum", pageNum);
+		return "/qna/qnaDelete";
+	}
+	@RequestMapping("qnaUpdateForm")
+	public String qnaUpdateForm(int num, String pageNum, Model model) {
+		QnA qna = qs.select(num);
+		model.addAttribute("qna", qna);
+		model.addAttribute("pageNum", pageNum);
+		return "/qna/qnaUpdateForm";
+	}
+	@RequestMapping("qnaUpdate")
+	public String qnaUpdate(QnA qna, String pageNum, Model model) {
+		int result = qs.update(qna);
+		int num = qna.getNum();
+		model.addAttribute("result", result);
+		model.addAttribute("pageNum", pageNum);
+		model.addAttribute("num", num);
+		return "/qna/qnaUpdate";
+	}
 }

@@ -48,4 +48,13 @@
 		insert into qna values(#{num }, #{writer }, #{subject }, #{content }, #{email }, 0, #{password }, #{ref },
 									#{re_step }, #{re_level }, #{ip }, sysdate, 'n')
 	</insert>
+	<update id="updateReadCount" parameterType="integer">
+		update qna set readcount = readcount+1 where num = #{num }
+	</update>
+	<update id="delete" parameterType="integer">
+		update qna set del='y' where num=#{num}
+	</update>
+	<update id="update" parameterType="qna">
+		update qna set subject=#{subject}, content=#{content} where num=#{num}
+	</update>
 </mapper>

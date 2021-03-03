@@ -110,7 +110,7 @@
 	</form>
 	<div align="center">
 		<a href="qnaInsertForm.og?num=0&pageNum=1" class="btn btn-success">게시글 입력</a>
-		<a href="qnalist.og" class="btn btn-warning">Q&A</a>
+		<a href="qnaList.og" class="btn btn-warning">Q&A</a>
 		<a href="main.og" class="btn btn-default">메인</a>
 	</div>
 </div>

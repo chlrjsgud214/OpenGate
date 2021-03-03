@@ -7,16 +7,22 @@
 <meta charset="UTF-8">
 <style type="text/css">
 body { background-color: #fff; 
-	/* background-image: url('resources/upload/x-file.jpg'); */
+	background-image: url('resources/images/bg.webp');
 }
 h1 {
 	letter-spacing:-2px;
+	color: white;
+	margin-top: 50px;
 }
 .star{margin-top:10px;}
 
 .tema {margin-top:0px;  color:#ffffff; padding:20px 0 100px 0;}
 .tema p{  color:#fff; line-height:100%;}
 
+.tema-back {
+	background-color: white;
+	width: 100%; height: 100%;
+}
 .tema-items {list-style: none; margin: 0;}
 .tema-items {}
 .tema-items > li {float: left; padding: 0; margin-left: 30px;}
@@ -96,6 +102,9 @@ h1 {
 .p {
 	margin-left: 47%;
 }
+.f {
+	color: white;
+}
 .pagination li.a a {
 	color: white; !important; background: #BDBDBD; !important; 
 }
@@ -109,6 +118,7 @@ h1 {
 	<div class="container">
 		<h1 class="text-center">테마 소개</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
+
 		<c:forEach var="product" items="${list}">
 			<ul class="tema-items col-md-4">
 				<li class="tema-item">
@@ -124,15 +134,15 @@ h1 {
 						</div>
 						<div align="center">
 							<br>
-							<span class="title">${product.tema}</span><br>
+							<span class="title f">${product.tema}</span><br>
 							<div style="color: #BDBDBD; font-size: 15px;">_______</div>
 							<br>
-							<span>테마 오픈 날짜 ${product.startdate}</span> <br>
-							<span>테마 마감 날짜 ${product.enddate}</span> <br>
+							<span class="f">테마 오픈 날짜 ${product.startdate}</span> <br>
+							<span class="f">테마 마감 날짜 ${product.enddate}</span> <br>
 							<br>
-							<span>난이도 : ${product.difficulty}</span><br> <span>공포도
-								: ${product.fear}</span><br> <span>활동성 : ${product.active}</span><br>
-								<span>예약 가능 지점 : ${product.locName}</span><br>
+							<span class="f">난이도 : ${product.difficulty}</span><br> <span class="f">공포도
+								: ${product.fear}</span><br> <span class="f">활동성 : ${product.active}</span><br>
+								<span class="f">예약 가능 지점 : ${product.locName}</span><br>
 						</div>
 						<div align="center">
 							<div style="color: #BDBDBD;" align="center">______________________</div>
