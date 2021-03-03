@@ -12,6 +12,6 @@ public class NoticeReplyBoard {
 	private String replyer;
 	private String password;
 	private Date reg_date;
-	private Date updateDate;
+	private Date updatedate;
 	private String del;
 }

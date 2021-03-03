@@ -12,6 +12,7 @@
 		<typeAlias alias="product" type="com.og.opengate.model.Product"/>
 		<typeAlias alias="reviewboard" type="com.og.opengate.model.ReviewBoard" />
 		<typeAlias alias="noticerbd" type="com.og.opengate.model.NoticeReplyBoard"/>
+		<typeAlias alias="qna" type="com.og.opengate.model.QnA"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="notice.xml" />
@@ -19,5 +20,6 @@
 		<mapper resource="Product.xml" />
 		<mapper resource="reviewboard.xml" />
 		<mapper resource="noticerbd.xml" />
+		<mapper resource="qna.xml"/>
 	</mappers>
 </configuration>
