@@ -89,6 +89,15 @@ public class QnAController {
 		model.addAttribute("id", id);
 		return "/qna/qnaView";
 	}
+	@RequestMapping("qnaDeleteForm")
+	public String qnaDeleteForm(int num, String pageNum, Model model) {
+		QnA qna = qs.select(num);
+		model.addAttribute("qna", qna);
+		model.addAttribute("num", num);
+		model.addAttribute("pageNum", pageNum);
+		return "/qna/qnaDeleteForm";
+	}
+	
 	@RequestMapping("qnaDelete")
 	public String qnaDelete(int num, int pageNum, Model model) {
 		int result = qs.delete(num);

@@ -49,6 +49,9 @@
 						<a href="qnaUpdateForm.og?num=${qna.num }&pageNum=${pageNum }" class="btn btn-warning">수정</a>
 						<a class="btn btn-danger" onclick="qnaDel(${qna.num},${pageNum })">삭제</a>
 					</c:if>
+					<c:if test="${id == null || id == '' }">
+						<a href="qnaDeleteForm.og?num=${qna.num }&pageNum=${pageNum}" class="btn btn-danger">삭제</a>
+					</c:if>
 					<a href="qnaInsertForm.og?num=${qna.num }&pageNum=${pageNum }" class="btn btn-success">답글</a>
 				</td>
 			</tr>
