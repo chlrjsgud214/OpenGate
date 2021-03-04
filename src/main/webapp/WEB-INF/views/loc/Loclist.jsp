@@ -35,8 +35,8 @@ h1 {
 	margin-bottom: 30px;
 }
 #aa {
-	margin-left: 75px;
-	margin-top: 35px;
+	margin-left: 84px;
+	margin-top: 5px;
 	border-radius: 7px 7px 7px 7px;
 }
 .bb {
@@ -44,6 +44,9 @@ h1 {
 }
 .ff {
 	color: white;
+	text-align: left;
+	margin-left: 75px;
+	margin-top: 35px;
 }
 </style>
 <script type="text/javascript">
@@ -64,7 +67,7 @@ h1 {
 					<td align="center" class="td ff">지점이 없습니다.</td>
 				</tr>
 			</c:if>
-			<div align="center" class="u ff">
+			<div align="center" class="u">
 				<c:if test="${not empty list}">
 					<c:forEach var="l" items="${list}">
 						<span><a class="tt ff"
@@ -126,7 +129,7 @@ h1 {
 						});    
 						</script>
 					<br>
-					<div id="aa"class="col-md-offset-1">
+					<div class="col-md-4 ff">
 					<div><p style="font-weight: bold;">합정점</p></div>
 					<div><p><span style="font-weight: bold;">주소 : </span>서울 마포구 서교동 395-46</p></div>
 					<div><span style="font-weight: bold;">번호 : </span>010-0000-0000</div>
@@ -136,7 +139,7 @@ h1 {
 		</table>
 		<div id="disp"></div>
 		<c:if test="${id == 'master' }">
-		<div style="margin-left: 10px;">
+		<div style="float:left; pposition: relative;" class="col-md-12">
 			<a href="locInsertForm.og" id="aa" class="btn btn-default">지점 등록</a>
 		</div><br><br>
 		</c:if>
