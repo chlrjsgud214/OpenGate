@@ -24,6 +24,6 @@ public class BookingDaoImpl implements BookingDao {
 	@Override
 	public int insert(Booking booking) {
 		return sst.insert("bookingns.insert", booking);
-	}  
+	}
 	 
 }

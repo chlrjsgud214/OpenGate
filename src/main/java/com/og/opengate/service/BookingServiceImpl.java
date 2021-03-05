@@ -25,5 +25,5 @@ public class BookingServiceImpl implements BookingService {
 		return bd.insert(booking);
 	}
 
-	   
+	    
 }
