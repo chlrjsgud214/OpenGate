@@ -11,4 +11,4 @@ public interface BookingDao {
 
 	List<Booking> list(String locName);
  
-} 
+}  
