@@ -36,4 +36,9 @@ public class ProductDaoImpl implements ProductDao{
 	public int productUpdate(Product product) {
 		return sst.update("productns.productUpdate", product);
 	}
+	
+	@Override
+	public List<Product> ptList() {
+		return sst.selectList("productns.ptList");
+	}
 }

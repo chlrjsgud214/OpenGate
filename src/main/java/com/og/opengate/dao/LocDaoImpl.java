@@ -32,4 +32,9 @@ public class LocDaoImpl implements LocDao {
 	public int locDelete(String locName) {
 		return sst.delete("locns.locDelete", locName);
 	}
+	
+	@Override
+	public List<Loc> lList(String locName) {
+		return sst.selectList("locns.lList", locName);
+	}
 }

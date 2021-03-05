@@ -15,5 +15,6 @@ public interface LocService {
 	int locUpdate(Loc loc);
 
 	int locDelete(String locName);
-
+	
+	List<Loc> lList(String locName);
 }

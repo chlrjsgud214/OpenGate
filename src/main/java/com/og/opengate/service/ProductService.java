@@ -17,4 +17,6 @@ public interface ProductService {
 	int productdelete(String tema);
 
 	int productUpdate(Product product);
+	
+	List<Product> ptlist();
 }

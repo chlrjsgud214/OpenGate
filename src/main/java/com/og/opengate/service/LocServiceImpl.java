@@ -32,4 +32,8 @@ public class LocServiceImpl implements LocService{
 	public int locDelete(String locName) {
 		return ld.locDelete(locName);
 	}
+	@Override
+	public List<Loc> lList(String locName) {
+		return ld.lList(locName);
+	}
 }
