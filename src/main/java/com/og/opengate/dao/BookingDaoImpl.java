@@ -25,5 +25,5 @@ public class BookingDaoImpl implements BookingDao {
 	public int insert(Booking booking) {
 		return sst.insert("bookingns.insert", booking);
 	}
-	
+	 
 }

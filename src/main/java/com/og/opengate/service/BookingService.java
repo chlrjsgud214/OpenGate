@@ -11,5 +11,5 @@ public interface BookingService {
 
 
 	List<Booking> list(String locName);
-
+ 
 }
