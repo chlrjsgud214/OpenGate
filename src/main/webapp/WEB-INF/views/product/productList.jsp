@@ -180,13 +180,13 @@ h1 {
 		</ul>
 	</div>
 	<c:if test="${id == 'master' }">
-	<div style="margin-top: 100%; position:absolute; margin-left: 70px;">
+	<div style="float:left; margin-left: 70px; position: relative;" class="col-md-12">
 		<a id="b" class="btn btn-default" href="productInsertForm.og">테마 등록</a>
 		<a id="b" class="btn btn-default" href="main.og">메인</a>
 	</div>
 	</c:if>
 	<c:if test="${id != 'master' }">
-	<div style="margin-top: 100%; position:absolute; margin-left: 70px;">
+	<div style="float:left; margin-left: 70px; position: relative;" class="col-md-12">
 		<a id="b" class="btn btn-default" href="main.og">메인</a>
 	</div>
 	</c:if>

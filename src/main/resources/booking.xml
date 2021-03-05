@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bookingns">
+	<!-- <select id="list" parameterType="string" resultType="booking">
+		select * from booking where locName=#{locName} order by 
+	</select> -->
+	<select id="bookingList" resultType="booking">
+		select * from booking order by name
+	</select>
+	<select id="select" parameterType="string">
+		select * from booking where name=#{name}
+	</select>
+	<insert id="insert" parameterType="booking">
+		insert into booking values(#{tema},#{locName},#{id},#{name},
+		#{phone},#{note},#{date},#{time})
+	</insert>
+</mapper>

@@ -22,4 +22,7 @@
 	<delete id="locDelete" parameterType="String">
 		delete from loc where locName=#{locName}
 	</delete>
+	<select id="lList" parameterType="string" resultType="loc">
+		select locName from loc
+	</select>
 </mapper>

@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -28,7 +29,23 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="로그인" class="btn btn-success">
-				<a href="joinForm.og" class="btn btn-info">회원가입</a>
+					<div id="naverIdLogin"></div>
+						<script type="text/javascript">
+							var naverLogin = new naver.LoginWithNaverId({
+								clientId : "7eRKZaK7LfcNjNxMd7Ht",
+								callbackUrl : "http://localhost:8080/opengate/main.og",
+								isPopup : false, /* 팝업을 통한 연동처리 여부 */
+								loginButton : {
+									color : "green",
+									type : 2,
+									height : 30
+								}
+							/* 로그인 버튼의 타입을 지정 */
+							});
+
+							/* 설정정보를 초기화하고 연동을 준비 */
+							naverLogin.init();
+						</script> <a href="joinForm.og" class="btn btn-info">회원가입</a>
 				<a href="main.og" class="btn btn-default">메인</a>
 			</td>	
 		</tr>

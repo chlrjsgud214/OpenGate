@@ -35,11 +35,18 @@ h1 {
 	margin-bottom: 30px;
 }
 .pp {
+	margin-left:75px;
 	text-align: left;
+	color: white;
 }
 #gg {
+	margin-left: 84px;
+	margin-top: 5px;
 	border-radius: 7px 7px 7px 7px;
-	margin-top: 35px;
+}
+#gg2 {
+	margin-top: 5px;
+	border-radius: 7px 7px 7px 7px;
 }
 .ff {
 	color: white;
@@ -58,7 +65,7 @@ h1 {
 		<h1>지점</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
 		<br><table class="table loc-item">
-			<div align="center" class="u ff">
+			<div align="center" class="u">
 					<c:forEach var="o" items="${list}">
 						<span><a class="tt ff"
 							href="locDetail.og?locName=${o.locName}"> ${o.locName}</a></span>
@@ -236,7 +243,7 @@ h1 {
 						</script>
 					</c:if>
 					<br>
-					<div class="pp col-md-offset-1">
+					<div class="col-md-4 pp">
 					<div><p style="font-weight: bold;">${l.locName}</p></div>
 					<div><p><span style="font-weight: bold;">주소 : </span><span>${l.locAddr}</span></p></div>
 					<div><span style="font-weight: bold;">번호 : </span><span>${l.locTel}</span></div>
@@ -245,9 +252,9 @@ h1 {
 		</table>
 		<div id="disp"></div>
 		<c:if test="${id == 'master' }">
-		<div style="margin-left: 84px;">
+		<div style="float:left; pposition: relative;" class="col-md-12">
 			<a href="locUpdateForm.og?locName=${l.locName}" id="gg" class="btn btn-default">지점 수정</a>
-			<a id="gg" class="btn btn-default" href="locDelete.og?locName=${l.locName}">지점 삭제</a>
+			<a id="gg2" class="btn btn-default" href="locDelete.og?locName=${l.locName}">지점 삭제</a>
 		<br><br><br>
 		</div>
 		</c:if>

@@ -33,4 +33,7 @@
 			,difficulty=#{difficulty}, fear=#{fear}, active=#{active}
 				where tema=#{tema}
 	</update>
+	<select id="ptList" resultType="product">
+		select tema from product
+	</select>
 </mapper>
