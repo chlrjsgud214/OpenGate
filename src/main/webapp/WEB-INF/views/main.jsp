@@ -20,6 +20,7 @@
 	<a class="btn btn-default" href="logout.og">로그아웃</a> 
 	<a class="btn btn-default" href="qnaList.og">Q&A</a>
 	<a class="btn btn-default" href="LocList.og">지점</a>
+	<a class="btn btn-default" href="bookinginsertForm.og">예약하기</a>
 	<script>
 		var naverLogin = new naver.LoginWithNaverId(
 			{
