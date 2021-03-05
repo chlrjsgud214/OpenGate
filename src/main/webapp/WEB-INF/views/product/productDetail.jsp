@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
+body { background-color: #fff; 
+	background-image: url('resources/images/bg.webp');
+}
 h1 {
 	letter-spacing:-2px;
 	text-align: center;
@@ -35,7 +38,7 @@ h1 {
  	margin: 60px;
 	margin-bottom: 0;
 }
-.bb {
+#bf {
  	margin-left : 65px;
 	margin-bottom: 10px;
 	border-radius: 7px 7px 7px 7px;
@@ -45,6 +48,9 @@ h1 {
 	width: 100%; height: 85%;
 	float: right;
 	position: absolute;
+}
+.f {
+	color: white;
 }
 </style>
 <script type="text/javascript">	
@@ -56,21 +62,21 @@ h1 {
 </head>
 <body>
 	<div class="container">
-		<h1>테마 상세 설명</h1>
+		<h1 class="f">테마 상세 설명</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">___________</div>
 		<ul class="tema-items col-md-3">
 			<li class="tema-item">
 				<div class="tema-iamge">
 					<img alt="" src="resources/upload/${product.fileName}">
 					<div style="color: #BDBDBD; font-weight: bold;" align="center">______</div>
-					<br> <span>${product.content}</span>
+					<br> <span class="f">${product.content}</span>
 				</div>
 			</li>
 		</ul>
 		<ul class="tema-item2 col-md-5 cont">
 			<li class="tema-items2">
-				<div align="left" class="content">
-					<div class="title">${product.tema}</div>
+				<div align="left" class="content f">
+					<div class="title f">${product.tema}</div>
 					<div style="color: #BDBDBD; font-weight: bold;" align="left">___________</div>
 					<br>
 					<div>장르 : 공포,스릴러</div>
@@ -84,8 +90,8 @@ h1 {
 				</div>
 				<c:if test="${id == 'master' }">
 				<div>
-					<a class="btn btn-default bb" href="productDelete.og?tema=${product.tema}">삭제</a>
-					<a class="btn btn-default bb"
+					<a id="bf" class="btn btn-default" href="productDelete.og?tema=${product.tema}">삭제</a>
+					<a id="bf" class="btn btn-default"
 						href="productUpdateForm.og?tema=${product.tema}">수정</a>
 				</div>
 				</c:if>
