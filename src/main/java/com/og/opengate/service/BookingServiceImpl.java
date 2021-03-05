@@ -8,10 +8,10 @@ import com.og.opengate.model.Booking;
 public class BookingServiceImpl implements BookingService {
 	@Autowired
 	private BookingDao bd;
-	@Override
-	public List<Booking> list(String locName) {
-		return bd.list(locName);
-	}
+//	@Override
+//	public List<Booking> list(String locName) {
+//		return bd.list(locName);
+//	}
 	@Override
 	public List<Booking> bookingList() {
 		return bd.bookingList();
