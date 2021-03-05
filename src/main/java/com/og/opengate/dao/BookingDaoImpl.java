@@ -8,10 +8,10 @@ import com.og.opengate.model.Booking;
 public class BookingDaoImpl implements BookingDao {
 	@Autowired
 	private SqlSessionTemplate sst;
-//	@Override
-//	public List<Booking> list(String locName) {
-//		return sst.selectList("bookinns",locName);
-//	}
+	@Override
+	public List<Booking> list(String locName) {
+		return sst.selectList("bookinns",locName);
+	}
 
 	@Override
 	public List<Booking> bookingList() {
