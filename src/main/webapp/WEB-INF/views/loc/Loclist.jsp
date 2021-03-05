@@ -48,6 +48,9 @@ h1 {
 	margin-left: 75px;
 	margin-top: 35px;
 }
+.wt {
+	color: white;
+}
 </style>
 <script type="text/javascript">
 	$(function() {
@@ -70,7 +73,7 @@ h1 {
 			<div align="center" class="u">
 				<c:if test="${not empty list}">
 					<c:forEach var="l" items="${list}">
-						<span><a class="tt ff"
+						<span><a class="tt wt"
 							href="locDetail.og?locName=${l.locName}"> ${l.locName}</a></span>
 					</c:forEach>
 					

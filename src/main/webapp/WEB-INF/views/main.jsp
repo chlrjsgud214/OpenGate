@@ -20,9 +20,9 @@
 	<a class="btn btn-default" href="logout.og">로그아웃</a> 
 	<a class="btn btn-default" href="qnaList.og">Q&A</a>
 	<a class="btn btn-default" href="LocList.og">지점</a>
-<<<<<<< HEAD
+	<a class="btn btn-default" href="bookinginsertForm.og">예약하기</a>
+
 <script type="text/javascript">
-=======
 	<a class="btn btn-default" href="bookinginsertForm.og">예약하기</a>
 	<script>
 		var naverLogin = new naver.LoginWithNaverId(
@@ -31,18 +31,13 @@
 				callbackUrl: "http://localhost:8080/opengate/main.og",
 				isPopup: false,
 				callbackHandle: true
-				/* callback 페이지가 분리되었을 경우에 callback 페이지에서는 callback처리를 해줄수 있도록 설정합니다. */
 			}
 		);
->>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 
 	var naver_id_login = new naver_id_login("7eRKZaK7LfcNjNxMd7Ht",
 			"http://localhost:8080/opengate/main.og");
-	// 접근 토큰 값 출력
 	alert(naver_id_login.oauthParams.access_token);
-	// 네이버 사용자 프로필 조회
 	naver_id_login.get_naver_userprofile("naverSignInCallback()");
-	// 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
 	function naverSignInCallback() {
 		alert(naver_id_login.getProfileData('email'));
 		alert(naver_id_login.getProfileData('nickname'));
