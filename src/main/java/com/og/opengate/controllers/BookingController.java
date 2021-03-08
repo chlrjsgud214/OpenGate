@@ -38,7 +38,7 @@ public class BookingController {
 		model.addAttribute("lc", lc);
 		model.addAttribute("pt", pt);
 		model.addAttribute("bookingList", bookingList);
-		return "/booking/bookinginserForm";
+		return "/booking/bookinginsertForm";
 	}
 	@RequestMapping("bookinginsert")
 	public String bookinginsert(Booking booking, Model model) {
