@@ -20,7 +20,7 @@
 	<a class="btn btn-default" href="logout.og">로그아웃</a> 
 	<a class="btn btn-default" href="qnaList.og">Q&A</a>
 	<a class="btn btn-default" href="LocList.og">지점</a>
-	<a class="btn btn-default" href="bookinginsertForm.og">예약하기</a>
+	<a class="btn btn-default" href="bookingForm.og">예약하기</a>
 <<<<<<< HEAD
 <script type="text/javascript">
 =======

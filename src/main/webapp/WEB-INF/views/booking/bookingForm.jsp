@@ -9,7 +9,9 @@
 </head>
 <body>
 <div class="container" align="center">
-	<a href="bookinginsertForm.og" class="btn btn-danger">비회원</a>
+	<c:if test="${id == null }">
+		<a href="bookinginsertForm.og" class="btn btn-danger">비회원</a>
+	</c:if>
 	<c:if test="${id != null }">
 		<a href="bookinginsertForm.og" class="btn btn-info">회원</a>
 	</c:if>
