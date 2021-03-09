@@ -10,7 +10,11 @@ public class BookingDaoImpl implements BookingDao {
 	private SqlSessionTemplate sst;
 	@Override
 	public List<Booking> list(String locName) {
+<<<<<<< HEAD
 		return sst.selectList("bookingns",locName);
+=======
+		return sst.selectList("bookigns",locName);
+>>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 	}
 
 	@Override

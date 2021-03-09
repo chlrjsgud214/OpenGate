@@ -10,7 +10,13 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">예약하기</h2>
+<<<<<<< HEAD
 <form action="bookinginsert.og">
+=======
+<form action="bookinginsert.og" method="post" name="frm" 
+enctype="multipart/form-data" onsubmit="return chk()">
+	<input type="hidden" name="id" value="${member.id }">
+>>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 	<table class="table table-bordered">
 		<tr>
 			<td>지점선택</td>
@@ -46,7 +52,7 @@
 		</tr>
 		<tr>
 			<td>아이디</td>
-			<td><input type="text"></td>
+			<td>${member.id }</td>
 		</tr>
 		<tr>
 			<td>이름</td>
