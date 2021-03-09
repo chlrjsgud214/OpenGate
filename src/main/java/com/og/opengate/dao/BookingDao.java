@@ -9,6 +9,6 @@ public interface BookingDao {
 
 	int insert(Booking booking);
 
-//	List<Booking> list(String locName);
-
-}
+	List<Booking> list(String locName);
+ 
+}   

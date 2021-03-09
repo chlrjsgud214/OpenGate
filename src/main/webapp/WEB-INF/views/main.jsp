@@ -21,8 +21,14 @@
 	<a class="btn btn-default" href="qnaList.og">Q&A</a>
 	<a class="btn btn-default" href="LocList.og">지점</a>
 	<a class="btn btn-default" href="bookinginsertForm.og">예약하기</a>
+<<<<<<< HEAD
 
 <script type="text/javascript">
+=======
+<<<<<<< HEAD
+<script type="text/javascript">
+=======
+>>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 	<a class="btn btn-default" href="bookinginsertForm.og">예약하기</a>
 	<script>
 		var naverLogin = new naver.LoginWithNaverId(

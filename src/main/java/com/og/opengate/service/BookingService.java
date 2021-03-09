@@ -10,6 +10,6 @@ public interface BookingService {
 	int insert(Booking booking);
 
 
-//	List<Booking> list(String locName);
-
+	List<Booking> list(String locName);
+    
 }

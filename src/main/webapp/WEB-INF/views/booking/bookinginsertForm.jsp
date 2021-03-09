@@ -10,7 +10,7 @@
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">예약하기</h2>
-<form action="bookinginsert">
+<form action="bookinginsert.og">
 	<table class="table table-bordered">
 		<tr>
 			<td>지점선택</td>
@@ -61,7 +61,7 @@
 			<td><textarea rows="3" cols="30"></textarea> </td>
 		</tr>
 		<tr>
-			<td><input type="submit" value="예매하기"></td>
+			<td colspan="2"><input type="submit" value="예매하기"></td>
 		</tr>
 	</table>
 </form>

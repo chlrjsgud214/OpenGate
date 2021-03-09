@@ -54,7 +54,7 @@ h1 {
 </style>
 <script type="text/javascript">
 	$(function() {
-		$('#disp').load("productList.og?locName='${l.locName}'");
+		$('#disp').load("productList.og?locName={l.locName}");
 	});
 </script>
 <meta charset="UTF-8">
