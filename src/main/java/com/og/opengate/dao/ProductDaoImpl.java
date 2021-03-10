@@ -41,4 +41,8 @@ public class ProductDaoImpl implements ProductDao{
 	public List<Product> ptList() {
 		return sst.selectList("productns.ptList");
 	}
+
+	public List<Product> mainlist() {
+		return sst.selectList("productns.mainlist");
+	}
 }

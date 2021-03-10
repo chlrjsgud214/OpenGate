@@ -54,6 +54,9 @@ h1 {
 .f {
 	font-size: 13px;
 }
+.f2 {
+	font-size: 14px;
+}
 .hd {
 	height: 180px;
 	margin-top: 200px;
@@ -82,16 +85,18 @@ h1 {
 			<li class="tema-item">
 				<div class="tema-iamge">
 					<img alt="" src="resources/upload/${product.fileName}">
-					<div style="color: #BDBDBD; font-weight: bold;" align="center">______</div>
+					<div style="color: #BDBDBD; font-weight: bold;font-size:15px"
+						 align="center">______</div>
 					<br> <span class="f">${product.content}</span>
 				</div>
 			</li>
 		</ul>
 		<ul class="tema-item2 col-md-5 cont">
 			<li class="tema-items2">
-				<div align="left" class="content f">
+				<div align="left" class="content f2">
 					<div class="title">${product.tema}</div>
-					<div style="color: #BDBDBD; font-weight: bold;" align="left">___________</div>
+					<div style="color: #BDBDBD; font-weight: bold;font-size:15px"
+					align="left">___________</div>
 					<br>
 					<div>장르 : 공포,스릴러</div>
 					<div>인원 : 1~5인</div>
@@ -99,7 +104,7 @@ h1 {
 					<div>공포도 : ${product.fear}</div>
 					<div>활동성 : ${product.active}</div>
 					<div>예약 가능 지점 : ${product.locName}</div>
-					<div style="color: #BDBDBD;" align="left">______________________</div>
+					<div style="color: #BDBDBD;font-size:15px" align="left">______________________</div>
 					<br>
 				</div>
 				<c:if test="${id == 'master' }">

@@ -37,6 +37,7 @@ h1 {
 .u {
 	margin-top: 30px;
 	margin-bottom: 30px;
+	font-size: 13px;
 }
 #aa {
 	margin-left: 77px;
@@ -54,7 +55,7 @@ h1 {
 	text-align: left;
 	margin-left: 75px;
 	margin-top: 35px;
-	font-size: 13px;
+	font-size: 15px;
 }
 .hd {
 	height: 180px;

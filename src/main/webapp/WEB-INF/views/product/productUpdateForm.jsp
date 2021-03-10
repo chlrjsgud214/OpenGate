@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 body {
-	background-image: url('resources/upload/bg.webp');
+	background-image: url('resources/images/bg.webp');
 }
 h1 {
 	font-weight: bold;
@@ -27,10 +27,12 @@ h1 {
 .t img {
 	width: 22%;
 }
-.b {
+#b {
 		width: 80px;
 		border-radius: 7px 7px 7px 7px;
 		margin: 0 auto;
+		border: 1px solid;
+		background-color: white;
 
 	}
 .hd {
@@ -108,8 +110,8 @@ h1 {
 				<tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" value="수정"
-						class="btn btn-default b"> <a href="productDetail.og?tema=${product.tema}"
-						class="btn btn-default b">이전</a></td>
+						id="b"	class="btn btn-default"> <a href="productDetail.og?tema=${product.tema}"
+						id="b"	class="btn btn-default">이전</a></td>
 				</tr>
 			</table>
 		</form>

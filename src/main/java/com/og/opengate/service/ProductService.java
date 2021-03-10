@@ -19,4 +19,6 @@ public interface ProductService {
 	int productUpdate(Product product);
 	
 	List<Product> ptlist();
+
+	List<Product> mainlist();
 }

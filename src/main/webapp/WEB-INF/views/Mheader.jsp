@@ -16,7 +16,7 @@
 		left: 0;
 		right: 0;
 		background-color: white;
-		z-index: 1;
+		z-index: 2;
 	}
 	.head1 {
 		position: relative;
@@ -41,6 +41,8 @@
 					href="LocList.og">지점</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="productList.og">테마</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="bookingForm.og">예약</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="noticeList.og">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link"
