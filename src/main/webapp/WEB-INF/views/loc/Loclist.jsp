@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <style type="text/css">
+body {
+	background-image: url('resources/upload/bg.webp');
+}
 h1 {
 	letter-spacing: -2px;
 	text-align: center;
@@ -35,18 +39,31 @@ h1 {
 	margin-bottom: 30px;
 }
 #aa {
-	margin-left: 84px;
+	margin-left: 77px;
 	margin-top: 5px;
 	border-radius: 7px 7px 7px 7px;
+	border: 1px solid;
 }
 .bb {
 	text-align: left;
 }
+.wt {
+	font-size: 14px;
+}
 .ff {
-	color: white;
 	text-align: left;
 	margin-left: 75px;
 	margin-top: 35px;
+	font-size: 13px;
+}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color:#8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
 }
 </style>
 <script type="text/javascript">
@@ -58,19 +75,23 @@ h1 {
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<h1>지점</h1>
-		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
+<article>
+	<div class="hd">
+		<h1 style="font-size: 30px">지점</h1>
+		<div style="color: #BDBDBD; font-weight: bold;" align="center">_____</div>
+	</div>
+		<div class="bgc">
+		<div class="container">
 		<br><table class="table loc-item">
 			<c:if test="${empty list}">
 				<tr>
-					<td align="center" class="td ff">지점이 없습니다.</td>
+					<td align="center" class="td wt">지점이 없습니다.</td>
 				</tr>
 			</c:if>
 			<div align="center" class="u">
 				<c:if test="${not empty list}">
 					<c:forEach var="l" items="${list}">
-						<span><a class="tt ff"
+						<span><a class="tt wt"
 							href="locDetail.og?locName=${l.locName}"> ${l.locName}</a></span>
 					</c:forEach>
 					
@@ -141,9 +162,12 @@ h1 {
 		<c:if test="${id == 'master' }">
 		<div style="float:left; pposition: relative;" class="col-md-12">
 			<a href="locInsertForm.og" id="aa" class="btn btn-default">지점 등록</a>
-		</div><br><br>
+		</div>
 		</c:if>
+	</div><br>
 	</div>
+</article>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>
 					

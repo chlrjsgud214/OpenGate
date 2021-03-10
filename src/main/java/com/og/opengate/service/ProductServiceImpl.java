@@ -37,8 +37,13 @@ public class ProductServiceImpl implements ProductService {
 		return pd.productUpdate(product);
 	}
 	
+//	@Override
+//	public List<Product> ptlist() {
+//		return pd.ptList();
+//	}
+
 	@Override
-	public List<Product> ptlist() {
-		return pd.ptList();
+	public List<Product> ptlist(String tema) {
+		return pd.ptList(tema);
 	}
 }

@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
+body {
+	background-image: url('resources/upload/bg.webp');
+}
 h1 {
 	letter-spacing:-2px;
 	text-align: center;
@@ -25,13 +29,25 @@ h1 {
 		width: 80px;
 		border-radius: 7px 7px 7px 7px;
 	}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color: #8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
+}
 </style>
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
+	<div class="hd">
 	<h1>지점 등록</h1>
 	<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
+	</div>
+	<div class="bgc">
+	<div class="container">
 	<form action="locInsert.og">
 		<table class="table table-striped t">
 			<tr><th>지점명</th><td><input type="text" name="locName"
@@ -45,5 +61,7 @@ h1 {
 		</table>
 	</form>
 </div>
+</div>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>

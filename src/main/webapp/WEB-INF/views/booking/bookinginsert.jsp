@@ -11,19 +11,13 @@
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
 		alert("예약 되었습니다");
-		location.href="main.og";
+		location.href="bookingList.og";
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
 		alert("다시 입력해주세요");
 		history.back;
-	</script>
-</c:if>
-<c:if test="${result == -1 }">
-	<script type="text/javascript">
-		alert("있는 이름입니다");
-		history.go(-1);
 	</script>
 </c:if>
 </body>

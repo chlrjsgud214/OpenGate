@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <style type="text/css">
+body {
+	background-image: url('resources/images/bg.webp');
+}
 h1 {
 	letter-spacing: -2px;
 	text-align: center;
@@ -37,33 +41,47 @@ h1 {
 .pp {
 	margin-left:75px;
 	text-align: left;
-	color: white;
+	font-size: 13px;
 }
 #gg {
-	margin-left: 84px;
+	margin-left: 75px;
 	margin-top: 5px;
 	border-radius: 7px 7px 7px 7px;
+	border: 1px solid;
 }
 #gg2 {
 	margin-top: 5px;
 	border-radius: 7px 7px 7px 7px;
+	border: 1px solid;
 }
 .ff {
-	color: white;
+	font-size: 14px;
+}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color: #8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
 }
 </style>
 <script type="text/javascript">
 	$(function() {
-		$('#disp').load("productList.og?locName='${l.locName}'");
+		$('#disp').load("productList.og");
 	});
 </script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<h1>지점</h1>
+	<div class="hd">
+		<h1 style="font-size: 30px">지점</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
+	</div>
+		<div class="bgc">
+		<div class="container">
 		<br><table class="table loc-item">
 			<div align="center" class="u">
 					<c:forEach var="o" items="${list}">
@@ -259,6 +277,8 @@ h1 {
 		</div>
 		</c:if>
 	</div>
+	</div>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>
 					

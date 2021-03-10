@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,10 +40,11 @@ h1 {
 	margin-bottom: 0;
 }
 #bf {
- 	margin-left : 65px;
+ 	margin-left : 64px;
 	margin-bottom: 10px;
 	border-radius: 7px 7px 7px 7px;
 	width: 35%;
+	border: 1px solid;
 }
 .zero {
 	width: 100%; height: 85%;
@@ -50,7 +52,16 @@ h1 {
 	position: absolute;
 }
 .f {
-	color: white;
+	font-size: 13px;
+}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color: #8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
 }
 </style>
 <script type="text/javascript">	
@@ -61,9 +72,12 @@ h1 {
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<h1 class="f">테마 상세 설명</h1>
+	<div class="hd">
+		<h1 style="font-size: 30px">테마 상세 설명</h1>
 		<div style="color: #BDBDBD; font-weight: bold;" align="center">___________</div>
+	</div>
+		<div class="bgc">
+		<div class="container">
 		<ul class="tema-items col-md-3">
 			<li class="tema-item">
 				<div class="tema-iamge">
@@ -76,7 +90,7 @@ h1 {
 		<ul class="tema-item2 col-md-5 cont">
 			<li class="tema-items2">
 				<div align="left" class="content f">
-					<div class="title f">${product.tema}</div>
+					<div class="title">${product.tema}</div>
 					<div style="color: #BDBDBD; font-weight: bold;" align="left">___________</div>
 					<br>
 					<div>장르 : 공포,스릴러</div>
@@ -98,7 +112,9 @@ h1 {
 			</li>
 		</ul>
 		<div class="col-md-3 zero"></div>
-		<div id="disp"></div>
+		<div id="disp"></div><br><br>
+	</div>
 	</div>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>

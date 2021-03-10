@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+body {
+	background-image: url('resources/images/bg.webp');
+}
 h1 {
 	font-weight: bold;
 	letter-spacing:-2px;
@@ -20,16 +24,29 @@ h1 {
 	font-size: 15px;
 	text-align: center;
 }
-.b {
+#b {
 		width: 80px;
 		border-radius: 7px 7px 7px 7px;
+		border: 1px solid;
 	}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color: #8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
+}
 </style>
 </head>
 <body>
-	<div class="container" align="center">
+	<div class="hd">
 		<h1>테마 등록</h1>
 		<div style="color: #BDBDBD;" align="center">____________</div>
+	</div>
+		<div class="bgc">
+		<div class="container" align="center">
 		<form action="productInsert.og" method="post"
 			enctype="multipart/form-data">
 			<table class="table table-striped t">
@@ -95,11 +112,13 @@ h1 {
 				<tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" value="등록"
-						class="btn btn-sm btn-default b"> <a href="main.og"
-						class="btn btn-default b">이전</a></td>
+						id="b"	class="btn btn-sm btn-default"> <a href="main.og"
+						id="b"	class="btn btn-default">이전</a></td>
 				</tr>
-			</table>
+			</table><br>
 		</form>
 	</div>
+	</div>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>

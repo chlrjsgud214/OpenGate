@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,12 +99,19 @@ h1 {
 }
 #b {
 	border-radius: 7px 7px 7px 7px;
+	border: 1px solid;
+	margin-right: 15px;
 }
-.p {
+#b2 {
+	border-radius: 7px 7px 7px 7px;
+	border: 1px solid;
+}
+#p {
 	margin-left: 47%;
 }
-.f {
-	color: white;
+.ma {
+	margin-right: 20px;
+	font-size: 13px;
 }
 .pagination li.a a {
 	color: white; !important; background: #BDBDBD; !important; 
@@ -111,14 +119,26 @@ h1 {
 .pagination li a {
 	color: black;
 }
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color: #8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
+}
 </style>
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
-		<h1 class="text-center">테마 소개</h1>
-		<div style="color: #BDBDBD; font-weight: bold;" align="center">____</div>
-
+<article>
+	<div class="hd">
+		<h1 class="text-center" style="font-size: 30px">테마 소개</h1>
+		<div style="color: #BDBDBD; font-weight: bold;" align="center">_______</div>
+	</div>
+		<div class="bgc">	
+		<div class="container">
 		<c:forEach var="product" items="${list}">
 			<ul class="tema-items col-md-4">
 				<li class="tema-item">
@@ -132,17 +152,17 @@ h1 {
 								</div>
 							</a>
 						</div>
-						<div align="center">
+						<div align="center" class="ma">
 							<br>
-							<span class="title f">${product.tema}</span><br>
+							<span class="title">${product.tema}</span><br>
 							<div style="color: #BDBDBD; font-size: 15px;">_______</div>
 							<br>
-							<span class="f">테마 오픈 날짜 ${product.startdate}</span> <br>
-							<span class="f">테마 마감 날짜 ${product.enddate}</span> <br>
+							<span>테마 오픈 날짜 ${product.startdate}</span> <br>
+							<span>테마 마감 날짜 ${product.enddate}</span> <br>
 							<br>
-							<span class="f">난이도 : ${product.difficulty}</span><br> <span class="f">공포도
+							<span>난이도 : ${product.difficulty}</span><br> <span>공포도
 								: ${product.fear}</span><br> <span class="f">활동성 : ${product.active}</span><br>
-								<span class="f">예약 가능 지점 : ${product.locName}</span><br>
+								<span>예약 가능 지점 : ${product.locName}</span><br>
 						</div>
 						<div align="center">
 							<div style="color: #BDBDBD;" align="center">______________________</div>
@@ -155,7 +175,7 @@ h1 {
 			</ul>
 		</c:forEach>
 		<div>
-		<ul class="pagination p col-md-3">
+		<ul id="p" class="pagination col-md-3">
 				<c:if test="${pb.startPage > pb.pagePerBlock }">
 					<li><a href="productList.og?pageNum=1">◀◀
 					</a></li>
@@ -180,16 +200,19 @@ h1 {
 		</ul>
 	</div>
 	<c:if test="${id == 'master' }">
-	<div style="float:left; margin-left: 70px; position: relative;" class="col-md-12">
-		<a id="b" class="btn btn-default" href="productInsertForm.og">테마 등록</a>
-		<a id="b" class="btn btn-default" href="main.og">메인</a>
+	<div style="float:left; margin-left: 60px; position: relative;" class="col-md-12">
+		<a id="b2" class="btn btn-default" href="productInsertForm.og">테마 등록</a>
+		<a id="b2" class="btn btn-default" href="main.og">메인</a><br><br>
 	</div>
 	</c:if>
 	<c:if test="${id != 'master' }">
-	<div style="float:left; margin-left: 70px; position: relative;" class="col-md-12">
-		<a id="b" class="btn btn-default" href="main.og">메인</a>
+	<div style="float:left; margin-left: 60px; position: relative;" class="col-md-12">
+		<a id="b2" class="btn btn-default" href="main.og">메인</a><br><br>
 	</div>
 	</c:if>
 	</div>
+	</div>
+	</article>
 </body>
 </html>
+<%@ include file="../footer.jsp" %>

@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+body {
+	background-image: url('resources/upload/bg.webp');
+}
 h1 {
 	font-weight: bold;
 	letter-spacing:-2px;
@@ -29,11 +33,24 @@ h1 {
 		margin: 0 auto;
 
 	}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color: #8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
+}
 </style>
 </head>
 <body>
-	<div class="container">
+	<div class="hd">
 		<h1>테마 수정</h1>
+		<div style="color: #BDBDBD;" align="center">____________</div>
+	</div>
+		<div class="bgc">
+		<div class="container">
 		<form action="productUpdate.og" method="post"
 			enctype="multipart/form-data">
 			<table class="table table-striped t">
@@ -97,5 +114,7 @@ h1 {
 			</table>
 		</form>
 	</div>
+	</div>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>

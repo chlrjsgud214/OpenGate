@@ -37,8 +37,13 @@ public class ProductDaoImpl implements ProductDao{
 		return sst.update("productns.productUpdate", product);
 	}
 	
+//	@Override
+//	public List<Product> ptList() {
+//		return sst.selectList("productns.ptList");
+//	}
+
 	@Override
-	public List<Product> ptList() {
-		return sst.selectList("productns.ptList");
+	public List<Product> ptList(String tema) {
+		return sst.selectList("productns.ptList", tema);
 	}
 }

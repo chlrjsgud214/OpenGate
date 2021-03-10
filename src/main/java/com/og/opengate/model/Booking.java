@@ -10,6 +10,6 @@ public class Booking {
     private String name;
     private String phone;
     private String note;
-    private Date bookDate;
-    private Date time;
+    private String bookDate;
+    private String time;
 }

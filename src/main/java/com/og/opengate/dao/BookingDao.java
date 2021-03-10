@@ -1,14 +1,23 @@
 package com.og.opengate.dao;
+import java.util.HashMap;
 import java.util.List;
 import com.og.opengate.model.Booking;
 public interface BookingDao {
 
-	List<Booking> bookingList();
+	List<Booking> bookList();
 
-	Booking select(String name);
 
-	int insert(Booking booking);
+	int insert(HashMap<String, Object> map);
 
-	List<Booking> list(String locName);
- 
-}   
+
+	Booking select(String id);
+
+
+
+	List<Booking> bookingList(String id);
+
+
+
+//	List<Booking> list(String locName);
+
+}

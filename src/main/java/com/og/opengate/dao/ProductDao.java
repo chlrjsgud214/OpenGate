@@ -18,5 +18,7 @@ public interface ProductDao {
 
 	int productUpdate(Product product);
 	
-	List<Product> ptList();
+//	List<Product> ptList();
+
+	List<Product> ptList(String tema);
 }

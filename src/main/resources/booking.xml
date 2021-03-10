@@ -5,14 +5,17 @@
 	<!-- <select id="list" parameterType="string" resultType="booking">
 		select * from booking where locName=#{locName} order by 
 	</select> -->
-	<select id="bookingList" resultType="booking">
+	<select id="bookList" resultType="booking">
 		select * from booking order by name
 	</select>
-	<select id="select" parameterType="string">
-		select * from booking where name=#{name}
+	<select id="select" parameterType="string" resultType="booking">
+		select * from booking where id=#{id}
 	</select>
-	<insert id="insert" parameterType="booking">
+	<insert id="insert" parameterType="hashmap">
 		insert into booking values(#{tema},#{locName},#{id},#{name},
-		#{phone},#{note},#{date},#{time})
+		#{phone},#{note},#{bookDate},#{time})
 	</insert>
+	<select id="bookingList" parameterType="string" resultType="booking">
+		select * from booking where id=#{id}
+	</select>
 </mapper>

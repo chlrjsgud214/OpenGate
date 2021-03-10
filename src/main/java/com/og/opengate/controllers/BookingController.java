@@ -6,7 +6,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.og.opengate.model.Booking;
 import com.og.opengate.model.Loc;
@@ -28,16 +30,8 @@ public class BookingController {
 	@Autowired
 	private MemberService ms;
 	
-//	@RequestMapping("bookingList")
-//	public String bookingList(String locName, Model model) {
-//		Loc loc = ls.locselect(locName);
-//		List<Booking> bookingList = bs.list(locName);
-//		model.addAttribute("loc", loc);
-//		model.addAttribute("bookingList", bookingList);
-//		return "/booking/bookingList";
-//	}
-	
-	@RequestMapping("bookingForm.og")
+
+	@RequestMapping("bookingForm")
 	public String bookingForm() {
 		return "/booking/bookingForm";
 	}
@@ -45,22 +39,32 @@ public class BookingController {
 	public String bookinginsertForm(String locName ,String tema, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
 		Member member = ms.select(id);
-		List<Booking> bookingList = bs.bookingList();
+		List<Booking> bookList = bs.bookList();
 		List<Loc> lc = ls.lList(locName);
-		List<Product> pt = ps.ptlist();
+		List<Product> pt = ps.ptlist(tema);
 		model.addAttribute("lc", lc);
 		model.addAttribute("pt", pt);
-		model.addAttribute("bookingList", bookingList);
+		model.addAttribute("bookList", bookList);
 		model.addAttribute("member", member);
 		return "/booking/bookinginsertForm";
 	}
 	@RequestMapping("bookinginsert")
-	public String bookinginsert(Booking booking, Model model) {
+	public String bookinginsert(Booking booking, Model model,HttpSession session) {
 		int result = 0;
-		Booking boo = bs.select(booking.getName());
+		Booking boo = bs.select(booking.getNote());
 		if(boo == null) result = bs.insert(booking);
-		else result = -1;
+		model.addAttribute("booking", booking);
 		model.addAttribute("result", result);
 		return "/booking/bookinginsert";
 	}
+	
+	@RequestMapping("bookingList")
+	public String bookingList(String id, Model model) {
+		Member member = ms.select(id);
+		List<Booking> bookingList = bs.bookingList(id);
+		model.addAttribute("member", member);
+		model.addAttribute("bookingList", bookingList);
+		return "/booking/bookingList";
+	}
+	
 }
