@@ -120,7 +120,7 @@ body {
 	margin-top: 50px;
 }
 #img2 {
-	height: 740px;
+	height: 700px;
 }
 </style>
 <script type="text/javascript">
@@ -128,10 +128,10 @@ body {
 		$('.slide3 .slide-img:gt(0)').hide();
 		setInterval(function() {
 			if (!$('.slide3 .slide-img').is(':animated')) {
-				$('.slide3 .slide-img').first().fadeOut(2000).next().fadeIn(
-						2000).end().appendTo('.slide3 .slide-inner')
+				$('.slide3 .slide-img').first().fadeOut(2500).next().fadeIn(
+						2500).end().appendTo('.slide3 .slide-inner')
 			}
-		}, 3500)
+		}, 3000)
 	})
 </script>
 <title>OPEN GATE</title>
@@ -140,9 +140,11 @@ body {
 	<div class="slide3 slide">
 		<div class="slide-inner">
 			<img
-				src="resources/images/slide1.jpg"
-				alt="이미지1" class="slide-img" id="img2"> <img
 				src="resources/images/slide2.jpg"
+				alt="이미지1" class="slide-img" id="img2"> <img
+				src="resources/images/slide6.png"
+				alt="이미지2" class="slide-img"> <img
+				src="resources/images/slide4.jpg"
 				alt="이미지2" class="slide-img">
 		</div>
 	</div>
