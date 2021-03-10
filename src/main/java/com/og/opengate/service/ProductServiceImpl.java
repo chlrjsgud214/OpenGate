@@ -46,4 +46,8 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> ptlist(String tema) {
 		return pd.ptList(tema);
 	}
+	
+	public List<Product> mainlist() {
+		return pd.mainlist();
+	}
 }

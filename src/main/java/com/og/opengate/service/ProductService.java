@@ -18,7 +18,13 @@ public interface ProductService {
 
 	int productUpdate(Product product);
 	
+<<<<<<< HEAD
 //	List<Product> ptlist();
 
 	List<Product> ptlist(String tema);
+=======
+	List<Product> ptlist();
+
+	List<Product> mainlist();
+>>>>>>> branch 'master' of https://github.com/chlrjsgud214/OpenGate.git
 }

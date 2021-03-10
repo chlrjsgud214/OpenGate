@@ -37,11 +37,12 @@ h1 {
 .u {
 	margin-top: 30px;
 	margin-bottom: 30px;
+	font-size: 13px;
 }
 .pp {
 	margin-left:75px;
 	text-align: left;
-	font-size: 13px;
+	font-size: 15px;
 }
 #gg {
 	margin-left: 75px;
