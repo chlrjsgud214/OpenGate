@@ -18,10 +18,10 @@ public interface ProductService {
 
 	int productUpdate(Product product);
 	
-<<<<<<< HEAD
-//	List<Product> ptlist();
-
 	List<Product> ptlist(String tema);
+<<<<<<< HEAD
+//List<Product> ptlist();
+
 =======
 	List<Product> ptlist();
 

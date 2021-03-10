@@ -17,11 +17,10 @@ public interface ProductDao {
 	int productdelete(String tema);
 
 	int productUpdate(Product product);
-	
+	List<Product> ptList(String tema);
 <<<<<<< HEAD
 //	List<Product> ptList();
-
-	List<Product> ptList(String tema);
+//	List<Product> ptList(String tema);
 =======
 	List<Product> ptList();
 
