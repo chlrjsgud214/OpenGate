@@ -14,7 +14,10 @@ public interface BookingService {
 
 	List<Booking> bookingList(String id);
 
+	List<Booking> bookingallList();
 
+
+	int delete(String id);
 
 
 //	List<Booking> list(String locName);

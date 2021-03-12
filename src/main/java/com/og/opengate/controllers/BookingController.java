@@ -59,12 +59,25 @@ public class BookingController {
 	}
 	
 	@RequestMapping("bookingList")
-	public String bookingList(String id, Model model) {
+	public String bookingList(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
 		Member member = ms.select(id);
 		List<Booking> bookingList = bs.bookingList(id);
 		model.addAttribute("member", member);
 		model.addAttribute("bookingList", bookingList);
 		return "/booking/bookingList";
+	}
+	@RequestMapping("bookingallList")
+	public String bookingallList(Model model) {
+		List<Booking> list = bs.bookingallList();
+		model.addAttribute("list", list);
+		return "/booking/bookingallList";
+	}
+	@RequestMapping("bookingDel")
+	public String bookingDel(String id,Model model) {
+		int result = bs.delete(id);
+		model.addAttribute("result", result);
+		return "/booking/bookingDel";
 	}
 	
 }

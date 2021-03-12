@@ -16,6 +16,12 @@
 		#{phone},#{note},#{bookDate},#{time})
 	</insert>
 	<select id="bookingList" parameterType="string" resultType="booking">
-		select * from booking where id=#{id}
+		select id,tema,locName,name,bookDate,time from booking where id=#{id}
 	</select>
+	<select id="bookingallList" resultType="booking">
+		select id,tema,locName,name,bookDate,time from booking
+	</select>
+	<delete id="delete" parameterType="integer">
+		delete from booking where id=#{id}
+	</delete>
 </mapper>

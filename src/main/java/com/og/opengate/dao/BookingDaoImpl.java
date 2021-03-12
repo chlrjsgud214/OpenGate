@@ -26,5 +26,11 @@ public class BookingDaoImpl implements BookingDao {
 	public List<Booking> bookingList(String id) {
 		return sst.selectList("bookingns.bookingList", id);
 	}
-	 
+	@Override
+	public List<Booking> bookingallList() {
+		return sst.selectList("bookingns.bookingallList");
+	}
+	@Override
+	public int delete(String id) {
+		return sst.delete("bookingns.delete", id); 
 }

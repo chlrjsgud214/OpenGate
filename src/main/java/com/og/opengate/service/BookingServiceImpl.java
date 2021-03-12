@@ -25,7 +25,7 @@ public class BookingServiceImpl implements BookingService {
 	public int insert(Booking booking) {
 		//bookdate , time/ Date d = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.S").parse(s);
 		try {
-			Date bookDate = new SimpleDateFormat("yyyy-MM-dd").parse(booking.getBookDate());
+			Date bookDate = new SimpleDateFormat("yy/MM/dd").parse(booking.getBookDate());
 			Date time = new SimpleDateFormat("HH:mm").parse(booking.getTime());
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("bookDate", bookDate);
@@ -50,6 +50,14 @@ public class BookingServiceImpl implements BookingService {
 	@Override
 	public List<Booking> bookingList(String id) {
 		return bd.bookingList(id);
+	}
+	@Override
+	public List<Booking> bookingallList() {
+		return bd.bookingallList();
+	}
+	@Override
+	public int delete(String id) {
+		return bd.delete(id);
 	}
 
 	
