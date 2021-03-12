@@ -33,4 +33,5 @@ public class BookingDaoImpl implements BookingDao {
 	@Override
 	public int delete(String id) {
 		return sst.delete("bookingns.delete", id); 
+	}
 }
