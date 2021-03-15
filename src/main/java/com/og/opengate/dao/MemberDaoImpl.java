@@ -19,4 +19,8 @@ public class MemberDaoImpl implements MemberDao{
 	public int update(Member member) {
 		return sst.update("memberns.update", member);
 	}
+	@Override
+	public int delete(String id) {
+		return sst.delete("memberns.delete", id);
+	}
 }

@@ -10,13 +10,13 @@
 <body>
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("삭제 되었습니다");
-		location.href="main.og";
+		alert("회원탈퇴 되었습니다.");
+		location.href="main.og"
 	</script>
 </c:if>
-<c:if test="${result == 0 }">
+<c:if test="${resul == 0 }">
 	<script type="text/javascript">
-		alert("삭제 실패");
+		alert("회원탈퇴가 불가능합니다");
 		history.go(-1);
 	</script>
 </c:if>

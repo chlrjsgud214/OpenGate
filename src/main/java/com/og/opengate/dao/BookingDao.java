@@ -1,4 +1,5 @@
 package com.og.opengate.dao;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.og.opengate.model.Booking;
@@ -22,7 +23,12 @@ public interface BookingDao {
 
 //
 //
-//	int delete(String id);
+	int delete(String id);
+
+
+	int update(Booking booking);
+
+
 
 
 

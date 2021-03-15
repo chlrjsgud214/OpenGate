@@ -1,5 +1,4 @@
 package com.og.opengate.controllers;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -53,14 +52,38 @@ public class BookingController {
 		Booking boo = bs.select(booking.getNote());
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		if(boo == null) {
-			System.out.println("@@@@@");
 			map = bs.insert(booking);
 		}
 		model.addAttribute("booking", map);
 		model.addAttribute("boo", boo);
 		return "/booking/bookinginsert";
 	}
-	
+	@RequestMapping("bookingupdateForm")
+	public String bookingupdateForm(String locName ,String tema, Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		String bookDate = (String)session.getAttribute("bookDate");
+		String time = (String)session.getAttribute("time");
+		Booking booking = bs.select(bookDate);
+		Booking booking1 = bs.select(time);
+		Member member = ms.select(id);
+		List<Booking> bookList = bs.bookList();
+		List<Loc> lc = ls.lList(locName);
+		List<Product> pt = ps.ptlist(tema);
+		model.addAttribute("lc", lc);
+		model.addAttribute("pt", pt);
+		model.addAttribute("bookList", bookList);
+		model.addAttribute("booking", booking);
+		model.addAttribute("booking", booking1);
+		model.addAttribute("member", member);
+		return "/booking/bookingupdateForm";
+	}
+	@RequestMapping("bookingupdate")
+	public String bookingupdate(Booking booking, Model model) {
+		int result = bs.update(booking);
+		model.addAttribute("result", result);
+		model.addAttribute("booking", booking);
+		return "/booking/bookingupdate";
+	}
 	@RequestMapping("bookingList")
 	public String bookingList(Booking booking, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
@@ -69,7 +92,6 @@ public class BookingController {
 		model.addAttribute("member", member);
 		model.addAttribute("booking", booking);
 		model.addAttribute("bookingList", bookingList);
-		System.out.println(bookingList.get(0).getTime());
 		return "/booking/bookingList";
 	}
 	@RequestMapping("bookingallList")
@@ -78,11 +100,11 @@ public class BookingController {
 		model.addAttribute("bookingallList", bookingallList);
 		return "/booking/bookingallList";
 	}
-//	@RequestMapping("bookingDel")
-//	public String bookingDel(String id,Model model) {
-//		int result = bs.delete(id);
-//		model.addAttribute("result", result);
-//		return "/booking/bookingDel";
-//	}
+	@RequestMapping("bookingDel")
+	public String bookingDel(String id,Model model) {
+		int result = bs.delete(id);
+		model.addAttribute("result", result);
+		return "/booking/bookingDel";
+	}
 	
 }

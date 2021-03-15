@@ -1,4 +1,5 @@
 package com.og.opengate.service;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.og.opengate.model.Booking;
@@ -21,7 +22,12 @@ public interface BookingService {
 
 //
 //
-//	int delete(String id);
+	int delete(String id);
+
+
+	int update(Booking booking);
+
+
 
 
 

@@ -33,10 +33,12 @@
 					width="90px" height="90px"></a>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto" style="font-size: 13px">
+				<c:if test="${id == null }">
 				<li class="nav-item"><a class="nav-link"
 					href="loginForm.og">로그인</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="joinForm.og">회원가입</a></li>
+				</c:if>
 				<li class="nav-item"><a class="nav-link"
 					href="LocList.og">지점</a></li>
 				<li class="nav-item"><a class="nav-link"
@@ -49,6 +51,12 @@
 					href="reviewlist.og">후기</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="qnaList.og">Q&A</a></li>
+				<c:if test="${id != null }">
+				<li class="nav-item"><a class="nav-link"
+					href="myinfo.og">내정보</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="logout.og">로그아웃</a></li>
+				</c:if>
 			</ul>
 		</div>
 	</div>

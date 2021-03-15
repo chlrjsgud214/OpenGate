@@ -30,6 +30,13 @@ public class MemberController {
 		else data = "사용중인 아이디입니다";
 		return data;
 	}
+	@RequestMapping("myinfo")
+	public String myinfo(HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		Member member = ms.select(id);
+		model.addAttribute("member", member);
+		return "/member/myinfo";
+	}
 	@RequestMapping("join")
 	public String join(Member member, Model model) {
 		int result = 0;
@@ -57,7 +64,8 @@ public class MemberController {
 		return "/member/login";
 	}
 	@RequestMapping("updateForm")
-	public String inserForm(String id, Model model) {
+	public String updateForm(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
 		Member member = ms.select(id);
 		model.addAttribute("member", member);
 		return "/member/updateForm";
@@ -82,5 +90,11 @@ public class MemberController {
 		session.invalidate();
 		return "/member/logout";
 	}
-	
+	@RequestMapping("delete")
+	public String delete(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		int result = ms.delete(id);
+		model.addAttribute("result", result);
+		return "/member/delete";
+	}
 }

@@ -1,7 +1,5 @@
 package com.og.opengate.service;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -56,9 +54,13 @@ public class BookingServiceImpl implements BookingService {
 		return bd.bookingallList();
 	}
 
-//	@Override
-//	public int delete(String id) {
-//		return bd.delete(id);
-//	}
+	@Override
+	public int delete(String id) {
+		return bd.delete(id);
+	}
+	@Override
+	public int update(Booking booking) {
+		return bd.update(booking);
+	}
 	
 }

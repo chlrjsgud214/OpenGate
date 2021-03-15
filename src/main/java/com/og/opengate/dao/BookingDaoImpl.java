@@ -1,4 +1,5 @@
 package com.og.opengate.dao;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -25,19 +26,19 @@ public class BookingDaoImpl implements BookingDao {
 	}
 	@Override
 	public List<Booking> bookingList(String id) {
-		List<Booking> bs = sst.selectList("bookingns.bookingList", id);
-		System.out.println("@@");
-		System.out.println(bs.get(0).getTime());
-		
 		return sst.selectList("bookingns.bookingList", id);
 	}
 	@Override
 	public List<Booking> bookingallList() {
 		return sst.selectList("bookingns.bookingallList");
 	}
-//	@Override
-//	public int delete(String id) {
-//		return sst.delete("bookingns.delete", id);
-//	}
+	@Override
+	public int delete(String id) {
+		return sst.delete("bookingns.delete", id);
+	}
+	@Override
+	public int update(Booking booking) {
+		return sst.update("bookingns.update", booking);
+	}
 	
 }
