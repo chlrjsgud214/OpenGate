@@ -12,9 +12,9 @@
 	<h2 class="text-primary">예약하기</h2>
 <form action="bookinginsert.og" method="post" name="frm" >
 	<input type="hidden" name="id" value="${member.id }">
+	<input type="hidden" name="tema" value="${product.tema }">
+	<input type="hidden" name="locName" value="${loc.locName }">
 	<table class="table table-bordered">
-		<input type="hidden" name="tema" value="${product.tema }">
-		<input type="hidden" name="locName" value="${loc.locName }">
 		<tr>
 			<td>테마선택</td>
 			<td>
@@ -62,14 +62,9 @@
 			<td><textarea rows="3" cols="30" name="note"></textarea> </td>
 		</tr>
 		<tr>
-			<td>날짜선택</td>
+			<td>날짜 시간선택</td>
 			<td>
 				<input type="date" name="bookDate" required="required">
-			</td>
-		</tr>
-		<tr>
-			<td>시간선택</td>
-			<td>
 				<input type="time" name="time" required="required">
 			</td>
 		</tr>

@@ -7,7 +7,7 @@ public interface BookingDao {
 	List<Booking> bookList();
 
 
-	int insert(HashMap<String, Object> map);
+	void insert(HashMap<String, Object> map);
 
 
 	Booking select(String id);
@@ -16,10 +16,19 @@ public interface BookingDao {
 
 	List<Booking> bookingList(String id);
 
+
 	List<Booking> bookingallList();
 
 
-	int delete(String id);
+//
+//
+//	int delete(String id);
+
+
+
+
+
+
 
 //	List<Booking> list(String locName);
 

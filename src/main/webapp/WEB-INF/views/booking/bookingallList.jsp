@@ -27,11 +27,11 @@
 			<td>시간</td>
 			<td>삭제</td>
 		</tr>
-	<c:if test="${empty bookingList }">
+	<c:if test="${empty bookingallList }">
 		<tr><th colspan="4">예약이 없습니다</th></tr>
 	</c:if>
-	<c:if test="${not empty bookingList }">
-		<c:forEach var="booking" items="${bookingList }">
+	<c:if test="${not empty bookingallList }">
+		<c:forEach var="booking" items="${bookingallList }">
 		<tr>
 			<td>${booking.id }</td>
 			<td>${booking.tema }</td>

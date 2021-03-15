@@ -8,13 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${result > 0 }">
+<c:if test="${empty map }">
 	<script type="text/javascript">
 		alert("예약 되었습니다");
 		location.href="bookingList.og";
 	</script>
 </c:if>
-<c:if test="${result == 0 }">
+<c:if test="${!empty map }">
 	<script type="text/javascript">
 		alert("다시 입력해주세요");
 		history.back;

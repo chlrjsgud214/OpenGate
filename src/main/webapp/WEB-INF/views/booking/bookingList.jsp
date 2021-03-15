@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp" %>
@@ -16,8 +17,8 @@
 		<td>테마</td>
 		<td>지점</td>
 		<td>이름</td>
-		<td>날짜</td>
 		<td>시간</td>
+		<td>날짜</td>
 	</tr>
 	<c:if test="${empty bookingList }">
 		<tr><th colspan="4">예약이 없습니다</th></tr>
@@ -29,8 +30,12 @@
 			<td>${booking.tema }</td>
 			<td>${booking.locName }</td>
 			<td>${booking.name }</td>
-			<td>${booking.bookDate }</td>
-			<td>${booking.time }</td>
+			<td>${booking.time}</td>
+			<td><fmt:parseDate var="booking1" value="${booking.bookDate}" pattern="yyyy-MM-dd"/>
+         		<fmt:formatDate var="resultRegDt" value="${booking}" pattern="yyyy-MM-dd"/>
+       			${resultRegDt} 
+       		</td>
+       		
 		</tr>
 		</c:forEach>
 	</c:if>

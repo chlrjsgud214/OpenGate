@@ -19,19 +19,25 @@ public class BookingDaoImpl implements BookingDao {
 		return sst.selectOne("bookingns.select", id);
 	}
 	@Override
-	public int insert(HashMap<String, Object> map) {
-		return sst.insert("bookingns.insert", map);
+	public void insert(HashMap<String, Object> map) {
+		System.out.println(map.toString());
+		 sst.insert("bookingns.insert", map);
 	}
 	@Override
 	public List<Booking> bookingList(String id) {
+		List<Booking> bs = sst.selectList("bookingns.bookingList", id);
+		System.out.println("@@");
+		System.out.println(bs.get(0).getTime());
+		
 		return sst.selectList("bookingns.bookingList", id);
 	}
 	@Override
 	public List<Booking> bookingallList() {
 		return sst.selectList("bookingns.bookingallList");
 	}
-	@Override
-	public int delete(String id) {
-		return sst.delete("bookingns.delete", id); 
-	}
+//	@Override
+//	public int delete(String id) {
+//		return sst.delete("bookingns.delete", id);
+//	}
+	
 }

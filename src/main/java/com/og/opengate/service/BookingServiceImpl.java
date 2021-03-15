@@ -22,10 +22,10 @@ public class BookingServiceImpl implements BookingService {
 		return bd.bookList();
 	}
 	@Override
-	public int insert(Booking booking) {
-		//bookdate , time/ Date d = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.S").parse(s);
+	public HashMap<String, Object> insert(Booking booking) {
+//		bookdate , time/ Date d = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.S").parse(s);
 		try {
-			Date bookDate = new SimpleDateFormat("yy/MM/dd").parse(booking.getBookDate());
+			Date bookDate = new SimpleDateFormat("yyyy-MM-dd").parse(booking.getBookDate());
 			Date time = new SimpleDateFormat("HH:mm").parse(booking.getTime());
 			HashMap<String, Object> map = new HashMap<String, Object>();
 			map.put("bookDate", bookDate);
@@ -36,11 +36,11 @@ public class BookingServiceImpl implements BookingService {
 			map.put("note", booking.getNote());
 			map.put("id", booking.getId());
 			map.put("phone", booking.getPhone());
-			
-			return bd.insert(map);
-		} catch (ParseException e) {
+			bd.insert(map);
+			return map;
+		} catch (Exception e) {
 			e.printStackTrace();
-			return 5;
+			return new HashMap<String, Object>();
 		}
 	}
 	@Override
@@ -55,10 +55,10 @@ public class BookingServiceImpl implements BookingService {
 	public List<Booking> bookingallList() {
 		return bd.bookingallList();
 	}
-	@Override
-	public int delete(String id) {
-		return bd.delete(id);
-	}
 
+//	@Override
+//	public int delete(String id) {
+//		return bd.delete(id);
+//	}
 	
 }
