@@ -31,7 +31,7 @@
 			<td>${booking.locName }</td>
 			<td>${booking.name }</td>
 			<td>${booking.time}</td>
-			<td><fmt:parseDate var="booking1" value="${booking.bookDate}" pattern="yyyy-MM-dd"/>
+			<td><fmt:parseDate var="booking" value="${booking.bookDate}" pattern="yyyy-MM-dd"/>
          		<fmt:formatDate var="resultRegDt" value="${booking}" pattern="yyyy-MM-dd"/>
        			${resultRegDt} 
        		</td>
