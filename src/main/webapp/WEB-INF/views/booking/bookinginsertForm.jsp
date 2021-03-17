@@ -78,7 +78,11 @@
 		</tr>
 	</table>
 </form>
+	<a href="bookingList.og" class="btn btn-info">예약현황</a>
 	<a href="main.og" class="btn btn-info">메인으로 가기</a>
+	<c:if test="${member.id == 'master' }">
+	<a href="bookingallList.og" class="btn btn-info">예약 전체보기</a>
+	</c:if>
 </div>
 </body>
 <script type="text/javascript">
