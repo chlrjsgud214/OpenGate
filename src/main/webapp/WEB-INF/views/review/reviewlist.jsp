@@ -1,18 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
+<%@ include file="../Mheader.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+body {
+	background-image: url('resources/images/bg.webp');
+}
+h1 {
+	letter-spacing: -2px;
+	text-align: center;
+	margin-top: 45px;
+}
+
+.loc-item {
+	margin-top: 30px;
+}
+
+.td {
+	font-weight: bold;
+}
+
+.tt {
+	border-left: 1px solid #BDBDBD;
+	border-right: 1px solid #BDBDBD;
+	color: black;
+	margin: 15px;
+	padding: 15px;
+}
+.tt:hover {
+	text-decoration: none;
+	color: #BDBDBD;
+}
+.u {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 13px;
+}
+#aa {
+	margin-left: 77px;
+	margin-top: 5px;
+	border-radius: 7px 7px 7px 7px;
+	border: 1px solid;
+}
+.bb {
+	text-align: left;
+}
+.wt {
+	font-size: 14px;
+}
+.ff {
+	text-align: left;
+	margin-left: 75px;
+	margin-top: 35px;
+	font-size: 15px;
+}
+.hd {
+	height: 180px;
+	margin-top: 200px;
+	color:#8C8C8C;
+}
+.bgc {
+	background-color: white;
+	width: 100%;
+}
+</style>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-	<div class="container" align="center">
-		<div align="center">
-			<a href="main.og" class="btn btn-success">메인 페이지 이동</a>
-		</div>
-		<h2 class="text-primary">게시글 목록</h2>
+</head><body>
+<article>
+	<div class="hd">
+		<h1 style="font-size: 30px">후기</h1>
+		<div style="color: #BDBDBD; font-weight: bold;" align="center">_____</div>
+	</div>
+		<div class="bgc">
+		<div class="container">
+	<div class="container" align="center">		
 		<c:set var="num" value="${no }"></c:set>
 		<table class="table table-striped">
 			<tr>
@@ -24,7 +90,7 @@
 			</tr>
 			<c:if test="${empty list }">
 				<tr>
-					<th colspan="5">게시글이 없습니다</th>
+					<th colspan="5">후기가 없습니다</th>
 				</tr>
 			</c:if>
 
@@ -91,6 +157,9 @@
 				</c:if>
 			</ul>
 		</div>
+		<div align="right">
+			<a href="reviewinsertForm.og?num=0&pageNum=1" class="btn btn-success">후기 작성</a>
+		</div>
 		<form action="reviewlist.og">
 			<!-- <select name="search">
 		<option value="writer">작성자</option>
@@ -115,10 +184,11 @@
 			</select> <input type="text" name="keyword" value="${board.keyword }">
 			<input type="submit" value="확인">
 		</form>
-		<div align="center">
-			<a href="reviewinsertForm.og?num=0&pageNum=1" class="btn btn-success">게시글
-				입력</a>
-		</div>
+		
 	</div>
+	</div>
+	</div>
+	</article>
 </body>
+<%@ include file="../footer.jsp" %>
 </html>
