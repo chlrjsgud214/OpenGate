@@ -20,7 +20,7 @@ h2 {padding:50px 0; font-size: 24px;}
 tr {color: #666;}
 
 
-</style>
+</style> 
 </head>
 <body>
 <div class="container" align="center">

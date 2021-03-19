@@ -22,7 +22,7 @@ public class BookingServiceImpl implements BookingService {
 	@Override
 	public HashMap<String, Object> insert(Booking booking) {
 //		bookdate , time/ Date d = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss.S").parse(s);
-		try {
+		try { 
 			Date bookDate = new SimpleDateFormat("yyyy-MM-dd").parse(booking.getBookDate());
 			Date time = new SimpleDateFormat("HH:mm").parse(booking.getTime());
 			HashMap<String, Object> map = new HashMap<String, Object>();

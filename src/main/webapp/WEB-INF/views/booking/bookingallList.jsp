@@ -17,7 +17,7 @@
 div {padding-top: 50px;}
 h2 {padding-bottom: 30px;}
 </style>
-</head>
+</head> 
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">예약현황 전체보기</h2>
