@@ -18,7 +18,7 @@
 	<script type="text/javascript">
 		alert("삭제 실패");
 		history.go(-1);
-	</script> 
+	</script>  
 </c:if>
 </body>
 </html>

@@ -57,7 +57,7 @@ public class BookingController {
 		model.addAttribute("booking", map);
 		model.addAttribute("boo", boo);
 		return "/booking/bookinginsert"; 
-	}
+	} 
 	@RequestMapping("bookingupdateForm")
 	public String bookingupdateForm(String locName ,String tema, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");

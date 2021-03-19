@@ -23,7 +23,7 @@ tr {color: #666;}
 	<input type="hidden" name="tema" value="${product.tema }">
 	<input type="hidden" name="locName" value="${loc.locName }">
 	<table class="table table-bordered">
-		<tr> 
+		<tr>  
 			<th>테마선택</th>
 			<td>
 			<select id="temaBox" onChange="fTemaChange()">

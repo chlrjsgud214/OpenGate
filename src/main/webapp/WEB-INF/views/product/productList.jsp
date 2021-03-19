@@ -167,7 +167,7 @@ h1 {
 						<div align="center">
 							<div style="color: #BDBDBD;" align="center">______________________</div>
 							<br>
-							<a id="b" class="btn btn-default" href="/booking/bookingForm.og"
+							<a id="b" class="btn btn-default" href="bookingForm.og"
 								style="border: 1px solid; width: 85%;">예약하기</a>
 						</div>
 					</div>

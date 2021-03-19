@@ -33,6 +33,8 @@
 					width="90px" height="90px"></a>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto" style="font-size: 13px">
+
+			<c:if test=""></c:if>
 				<c:if test="${id == null }">
 				<li class="nav-item"><a class="nav-link"
 					href="loginForm.og">로그인</a></li>

@@ -17,7 +17,7 @@
 <style type="text/css">
 .container {width: 70%;}
 h2 {padding:50px 0; font-size: 24px;}
-tr {color: #666;}
+tr {color: #666;} 
 
 
 </style> 

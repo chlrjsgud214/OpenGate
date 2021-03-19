@@ -18,7 +18,7 @@ public class BookingDaoImpl implements BookingDao {
 	@Override
 	public Booking select(String id) {
 		return sst.selectOne("bookingns.select", id);
-	} 
+	}  
 	@Override
 	public void insert(HashMap<String, Object> map) {
 		System.out.println(map.toString());

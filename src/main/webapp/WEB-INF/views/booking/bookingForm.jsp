@@ -21,6 +21,6 @@
 	<c:if test="${id == null }">
 		<a href="loginForm.og" class="btn btn-info">회원</a>
 	</c:if>
-</div> 
+</div>  
 </body>
 </html>
