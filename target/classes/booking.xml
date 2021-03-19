@@ -11,11 +11,10 @@
 	<select id="select" parameterType="string" resultType="booking">
 		select * from booking where id=#{id}
 	</select>
-	<insert id="insert" parameterType="hashmap">
-		insert into booking values(#{tema},#{locName},#{id},#{name},
-		#{phone},#{note},#{bookDate},#{time})
+	<insert id="insert" parameterType="hashmap" >
+		insert into booking values(#{tema},#{locName},#{id},#{name},#{phone},#{note},#{bookDate},To_char(#{time},'hh24:mi'))
 	</insert>
-	<select id="bookingList" parameterType="string" resultType="booking">
+ 	<select id="bookingList" parameterType="string" resultType="booking">
 		select id,tema,locName,name,bookDate,time from booking where id=#{id}
 	</select>
 	<select id="bookingallList" resultType="booking">
@@ -24,4 +23,8 @@
 	<delete id="delete" parameterType="integer">
 		delete from booking where id=#{id}
 	</delete>
+	<update id="update" parameterType="booking">
+		update booking set tema=#{tema},locName=#{locName},name=#{name},
+		phone=#{phone},note=#{note},date=#{date},time=#{time} where id=#{id}
+	</update>
 </mapper>

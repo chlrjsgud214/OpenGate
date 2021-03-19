@@ -1,4 +1,6 @@
 package com.og.opengate.service;
+import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 import com.og.opengate.model.Booking;
 public interface BookingService {
@@ -6,7 +8,7 @@ public interface BookingService {
 	List<Booking> bookList();
 
 
-	int insert(Booking booking);
+	HashMap<String, Object> insert(Booking booking);
 
 
 	Booking select(String id);
@@ -14,10 +16,22 @@ public interface BookingService {
 
 	List<Booking> bookingList(String id);
 
+
 	List<Booking> bookingallList();
 
 
+//
+//
 	int delete(String id);
+
+
+	int update(Booking booking);
+
+
+
+
+
+
 
 
 //	List<Booking> list(String locName);

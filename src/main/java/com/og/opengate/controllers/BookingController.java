@@ -1,4 +1,5 @@
 package com.og.opengate.controllers;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -6,9 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.og.opengate.model.Booking;
 import com.og.opengate.model.Loc;
@@ -49,28 +48,56 @@ public class BookingController {
 		return "/booking/bookinginsertForm";
 	}
 	@RequestMapping("bookinginsert")
-	public String bookinginsert(Booking booking, Model model,HttpSession session) {
-		int result = 0;
+	public String bookinginsert(Booking booking, Model model) {
 		Booking boo = bs.select(booking.getNote());
-		if(boo == null) result = bs.insert(booking);
-		model.addAttribute("booking", booking);
-		model.addAttribute("result", result);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		if(boo == null) {
+			map = bs.insert(booking);
+		}
+		model.addAttribute("booking", map);
+		model.addAttribute("boo", boo);
 		return "/booking/bookinginsert";
 	}
-	
+	@RequestMapping("bookingupdateForm")
+	public String bookingupdateForm(String locName ,String tema, Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		String bookDate = (String)session.getAttribute("bookDate");
+		String time = (String)session.getAttribute("time");
+		Booking booking = bs.select(bookDate);
+		Booking booking1 = bs.select(time);
+		Member member = ms.select(id);
+		List<Booking> bookList = bs.bookList();
+		List<Loc> lc = ls.lList(locName);
+		List<Product> pt = ps.ptlist(tema);
+		model.addAttribute("lc", lc);
+		model.addAttribute("pt", pt);
+		model.addAttribute("bookList", bookList);
+		model.addAttribute("booking", booking);
+		model.addAttribute("booking", booking1);
+		model.addAttribute("member", member);
+		return "/booking/bookingupdateForm";
+	}
+	@RequestMapping("bookingupdate")
+	public String bookingupdate(Booking booking, Model model) {
+		int result = bs.update(booking);
+		model.addAttribute("result", result);
+		model.addAttribute("booking", booking);
+		return "/booking/bookingupdate";
+	}
 	@RequestMapping("bookingList")
-	public String bookingList(Model model, HttpSession session) {
+	public String bookingList(Booking booking, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
 		Member member = ms.select(id);
 		List<Booking> bookingList = bs.bookingList(id);
 		model.addAttribute("member", member);
+		model.addAttribute("booking", booking);
 		model.addAttribute("bookingList", bookingList);
 		return "/booking/bookingList";
 	}
 	@RequestMapping("bookingallList")
 	public String bookingallList(Model model) {
-		List<Booking> list = bs.bookingallList();
-		model.addAttribute("list", list);
+		List<Booking> bookingallList = bs.bookingallList();
+		model.addAttribute("bookingallList", bookingallList);
 		return "/booking/bookingallList";
 	}
 	@RequestMapping("bookingDel")

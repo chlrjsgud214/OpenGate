@@ -17,6 +17,14 @@
 		
 	}
 </script>
+<style type="text/css">
+.container {width: 40%;}
+h2 {padding-top:50px; font-size: 24px;}
+form {padding-top: 50px;}
+tr {color: #666;}
+
+
+</style>
 </head>
 <body>
 <div class="container" align="center">
@@ -61,11 +69,13 @@
 			required="required" value="${member.address }"></td> 
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><input type="submit"
-				value="수정" class="btn btn-danger">
+			<td colspan="2" align="center">
+				<a href="main.og" class="btn btn-outline-primary">메인으로 가기</a>
+				<input type="submit" value="수정" class="btn btn-outline-success">
+			</td>
 		</tr>
 	</table>
-	<a href="main.og" class="btn btn-success">메인으로 가기</a>
+	
 </form>
 </div>
 </body>

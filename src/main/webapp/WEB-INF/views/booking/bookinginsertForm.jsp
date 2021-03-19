@@ -6,17 +6,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.container {width: 40%;}
+h2 {padding-top:50px; font-size: 24px;}
+form {padding-top: 50px;}
+tr {color: #666;}
+
+
+</style>
 </head>
 <body>
 <div class="container" align="center">
 	<h2 class="text-primary">예약하기</h2>
 <form action="bookinginsert.og" method="post" name="frm" >
 	<input type="hidden" name="id" value="${member.id }">
+	<input type="hidden" name="tema" value="${product.tema }">
+	<input type="hidden" name="locName" value="${loc.locName }">
 	<table class="table table-bordered">
-		<input type="hidden" name="tema" value="${product.tema }">
-		<input type="hidden" name="locName" value="${loc.locName }">
 		<tr>
-			<td>테마선택</td>
+			<th>테마선택</th>
 			<td>
 			<select id="temaBox" onChange="fTemaChange()">
 				<c:forEach var="product" items="${pt }" varStatus="status">
@@ -31,7 +39,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>지점선택</td>
+			<th>지점선택</th>
 			<td>
 			<select id="locBox" onChange="fLocChange()">
 				<c:forEach var="loc" items="${lc}" varStatus="status">
@@ -46,42 +54,37 @@
 			</td>
 		</tr>
 		<tr>
-			<td>아이디</td>
+			<th>아이디</th>
 			<td>${member.id }</td>
 		</tr>
 		<tr>
-			<td>이름</td>
-			<td><input type="text" name="name" required="required"></td>
+			<th>이름</th>
+			<td><input type="text" name="name" required="required" class="form-control" ></td>
 		</tr>
 		<tr>
-			<td>전화번호</td>
-			<td><input type="text" name="phone" required="required"></td>
+			<th>전화번호</th>
+			<td><input type="text" name="phone" required="required" class="form-control"></td>
 		</tr>
 		<tr>
-			<td>노트</td>
-			<td><textarea rows="3" cols="30" name="note"></textarea> </td>
+			<th>노트</th>
+			<td><textarea name="note" class="form-control"></textarea> </td>
 		</tr>
 		<tr>
-			<td>날짜선택</td>
+			<th>날짜 시간선택</th>
 			<td>
 				<input type="date" name="bookDate" required="required">
-			</td>
-		</tr>
-		<tr>
-			<td>시간선택</td>
-			<td>
 				<input type="time" name="time" required="required">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center" ><input type="submit" value="예매하기"></td>
+			<td colspan="2" align="center" ><input type="submit" value="예매하기" class="btn btn-outline-success"></td>
 		</tr>
 	</table>
 </form>
-	<a href="bookingList.og" class="btn btn-info">예약현황</a>
-	<a href="main.og" class="btn btn-info">메인으로 가기</a>
+	<a href="bookingList.og" class="btn btn-outline-info">예약현황</a>
+	<a href="main.og" class="btn btn-outline-primary">메인으로 가기</a>
 	<c:if test="${member.id == 'master' }">
-	<a href="bookingallList.og" class="btn btn-info">예약 전체보기</a>
+	<a href="bookingallList.og" class="btn btn-outline-success">예약 전체보기</a>
 	</c:if>
 </div>
 </body>

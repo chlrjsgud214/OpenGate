@@ -19,4 +19,8 @@ public class MemberServiceImpl implements MemberService{
 	public int update(Member member) {
 		return md.update(member);
 	}
+	@Override
+	public int delete(String id) {
+		return md.delete(id);
+	}
 }

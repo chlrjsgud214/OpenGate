@@ -27,6 +27,14 @@
 		
 	}
 </script>
+<style type="text/css">
+.container {width: 40%;}
+h2 {padding-top:50px; font-size: 24px;}
+form {padding-top: 50px;}
+tr {color: #666;}
+
+
+</style>
 </head>
 <body>
 <div class="container" align="center">
@@ -38,49 +46,51 @@
 			<th>아이디</th>
 			<td>
 				<input type="text" name="id" required="required"
-				autofocus="autofocus">
+				autofocus="autofocus" class="form-control" >
 				<input type="button" onclick="idChk()" 
-				class="btn btn-info btn-sm" value="중복체크">
+				class="btn btn-outline-info btn-sm pull-right" value="중복체크">
 				<div id="disp" class="err"></div>
 			</td>
 		</tr>
 		<tr>
 			<th>비밀번호</th>
 			<td><input type="password" name="password" 
-				required="required"></td>
+				required="required"  class="form-control" ></td>
 		</tr>
 		<tr>
 			<th>비밀번호 재확인</th>
 			<td><input type="password" name="password2" 
-				required="required"></td>
+				required="required"  class="form-control" ></td>
 		</tr>
 		<tr>
 			<th>이름</th>
 			<td><input type="text" name="name" 
-			required="required"></td>
+			required="required"  class="form-control" ></td>
 		</tr>
 		<tr>
 			<th>휴대전화</th>
 			<td><input type="tel" name="phone" required="required"
 			pattern="\d{3}-\d{3,4}-\d{4}" 
-			placeholder="010-xxxx-xxxx"></td>
+			placeholder="010-xxxx-xxxx"  class="form-control" ></td>
 		</tr>
 		<tr>
 			<th>이메일</th>
 			<td><input type="email" name="email"
-			 required="required"></td>
+			 required="required" class="form-control" ></td>
 		</tr>
 		<tr>
 			<th>주소</th>
 			<td><input type="text" name="address"   
-			required="required"></td> 
+			required="required" class="form-control" ></td> 
 		</tr>
 		<tr>
 			<td colspan="2" align="center"><input type="submit" value="가입하기"
-				class="btn btn-danger">
+				class="btn btn-outline-info pull-right">
+			<a href="loginForm.og" class="btn btn-outline-primary">로그인</a>
+			<a href="main.og" class="btn btn-outline-primary">메인으로</a>
+			</td>
 		</tr>
 	</table>
-	<a href="loginForm.og" class="btn btn-success">로그인</a>
 </form>
 </div>
 </body>
