@@ -15,7 +15,7 @@
 </head>
 <body>
 <footer class="py-5 bg-dark foot">
-	<div>
+	<div class="container">
 		<p class="m-0 text-center text-white">Copyright &copy; OPEN GATE
 			2021</p>
 	</div>
