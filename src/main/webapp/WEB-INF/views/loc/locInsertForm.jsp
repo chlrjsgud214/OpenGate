@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <style type="text/css">
 body {
-	background-image: url('resources/upload/bg.webp');
+	background-image: url('resources/images/bg.webp');
 }
 h1 {
 	letter-spacing:-2px;
@@ -25,9 +25,10 @@ h1 {
 }
 .t tr {
 }
-.b {
+#bbb {
 		width: 80px;
 		border-radius: 7px 7px 7px 7px;
+		border: 1px solid;
 	}
 .hd {
 	height: 180px;
@@ -56,8 +57,8 @@ h1 {
 				 required="required"></td></tr>
 			<tr><th>번호</th><td><input type="tel" name="locTel" pattern="\d{3}-\d{3,4}-\d{4}"
 				 required="required"></td></tr>
-			<tr><td align="center" colspan="2"><input type="submit" value="등록" class="btn btn-default b">
-				<a class="btn btn-default" href="locDetail.og?locName=${loc.locName}">이전</a></td></tr>
+			<tr><td align="center" colspan="2"><input type="submit" value="등록" class="btn btn-default" id="bbb">
+				<a id="bbb" class="btn btn-default" href="locDetail.og?locName=${loc.locName}">이전</a></td></tr>
 		</table>
 	</form>
 </div>
